@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#140404">
+<title>DUBAJ PRO</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#140404;--cd:#1f0a0a;--cd2:#2a0f0f;
+  --ln:rgba(251,146,60,.15);
+  --tx:#fff5ed;--mu:#c4a89c;
+  --a:#ef4444;--a2:#f97316;--a3:#fbbf24;
+  --gold:#d4af37;--gold2:#f4d47c;--gold3:#b8860b;
+}
+html,body{height:100%}
+body{
+  background:
+    radial-gradient(1200px 700px at 100% -10%,rgba(239,68,68,.35),transparent 60%),
+    radial-gradient(900px 600px at -10% 15%,rgba(249,115,22,.28),transparent 60%),
+    radial-gradient(700px 500px at 50% 100%,rgba(251,191,36,.18),transparent 65%),
+    var(--bg);
+  background-attachment:fixed;
+  color:var(--tx);
+  font-family:"Segoe UI","Noto Kufi Arabic",Tahoma,sans-serif;
+  min-height:100dvh;line-height:1.7;overflow-x:hidden
+}
+.hide{display:none!important}
+.mu{color:var(--mu)}.sm{font-size:13px}
+.wrap{max-width:760px;margin:0 auto;padding:16px 16px 120px}
+
+.hd{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  background:rgba(20,4,4,.75);
+  border-bottom:1px solid var(--ln);
+  padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px
+}
+.br{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px}
+.lg{
+  width:38px;height:38px;border-radius:13px;display:grid;place-items:center;font-size:19px;
+  background:linear-gradient(135deg,#ef4444,#f97316,#fbbf24);
+  box-shadow:0 8px 24px rgba(239,68,68,.6),0 0 30px rgba(249,115,22,.4);
+  overflow:hidden
+}
+.lg img{width:100%;height:100%;object-fit:cover}
+.tt{
+  display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:99px;
+  font-size:11px;font-weight:700;text-decoration:none;color:#fff;
+  background:linear-gradient(135deg,rgba(239,68,68,.4),rgba(249,115,22,.4));
+  border:1px solid rgba(251,146,60,.35);
+  box-shadow:0 4px 14px rgba(239,68,68,.3)
+}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border:none;cursor:pointer;font-family:inherit;font-weight:700;font-size:15px;
+  padding:14px 20px;border-radius:16px;color:#fff;
+  background:var(--cd2);border:1px solid var(--ln);width:100%;
+  transition:transform .1s,box-shadow .25s
+}
+.btn:active{transform:scale(.97)}
+.bp{background:linear-gradient(135deg,#ef4444 0%,#f97316 50%,#fbbf24 100%);border:none;box-shadow:0 12px 32px rgba(239,68,68,.55),0 0 40px rgba(249,115,22,.35)}
+.bg{background:rgba(255,255,255,.06)}
+.bd{background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.45);color:#fca5a5}
+.bbr{background:linear-gradient(135deg,#ef4444,#dc2626);border:none;box-shadow:0 12px 32px rgba(239,68,68,.5)}
+.bsm{padding:9px 14px;font-size:13px;border-radius:12px;width:auto}
+.brw{display:flex;gap:10px;flex-wrap:wrap}
+.brw .btn{flex:1;min-width:130px}
+
+.card{
+  background:linear-gradient(180deg,var(--cd),#170606);
+  border:1px solid var(--ln);border-radius:20px;padding:18px;margin-bottom:14px;
+  box-shadow:0 12px 32px rgba(0,0,0,.45),inset 0 1px 0 rgba(251,146,60,.06)
+}
+.card.fl{box-shadow:none}
+.card h2{font-size:19px;margin-bottom:6px}
+.card h3{font-size:16px;margin-bottom:8px}
+.hero{
+  background:
+    radial-gradient(600px 200px at 100% 0%,rgba(239,68,68,.35),transparent 70%),
+    radial-gradient(400px 200px at 0% 100%,rgba(249,115,22,.25),transparent 70%),
+    linear-gradient(180deg,var(--cd),#170606)
+}
+.bar{height:11px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden;margin:10px 0}
+.bar>span{
+  display:block;height:100%;border-radius:99px;
+  background:linear-gradient(90deg,#ef4444,#f97316,#fbbf24);
+  box-shadow:0 0 12px rgba(249,115,22,.7);
+  transition:width .5s
+}
+.ph{display:flex;justify-content:space-between;font-size:13px;color:var(--mu);align-items:center}
+.ph b{color:var(--tx);font-size:15px}
+
+#welc{
+  position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:22px;
+  background:
+    radial-gradient(900px 500px at 50% -10%,rgba(239,68,68,.55),transparent 65%),
+    radial-gradient(700px 500px at 50% 110%,rgba(249,115,22,.45),transparent 65%),
+    radial-gradient(500px 300px at 80% 50%,rgba(251,191,36,.2),transparent 70%),
+    #0d0303;
+  overflow-y:auto
+}
+.wb{max-width:440px;width:100%;text-align:center;padding:16px 0}
+.wl{
+  width:110px;height:110px;margin:0 auto 24px;border-radius:34px;
+  display:grid;place-items:center;font-size:48px;
+  background:linear-gradient(135deg,#ef4444,#f97316,#fbbf24);
+  box-shadow:0 25px 60px rgba(239,68,68,.65),0 0 90px rgba(249,115,22,.5),inset 0 2px 20px rgba(255,255,255,.2);
+  animation:fl 3.4s ease-in-out infinite;overflow:hidden
+}
+.wl img{width:100%;height:100%;object-fit:cover}
+@keyframes fl{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(2deg)}}
+.wb h1{font-size:26px;margin-bottom:10px;background:linear-gradient(135deg,#fff,#fbbf24,#f97316);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wb p{color:var(--mu);font-size:15px;margin-bottom:20px}
+.ni{
+  width:100%;padding:15px 18px;border-radius:16px;
+  background:rgba(255,255,255,.06);border:1px solid var(--ln);
+  color:var(--tx);font-family:inherit;font-size:15px;text-align:center;
+  margin-bottom:14px;outline:none;transition:.25s
+}
+.ni:focus{border-color:rgba(249,115,22,.8);box-shadow:0 0 0 4px rgba(249,115,22,.15),0 0 25px rgba(239,68,68,.35)}
+.ni.err{border-color:#ef4444;animation:sh .4s}
+@keyframes sh{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+.qg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.qb{
+  background:linear-gradient(180deg,var(--cd),#170606);
+  border:1px solid var(--ln);border-radius:20px;padding:16px 12px;text-align:center;
+  cursor:pointer;color:var(--tx);font-family:inherit;font-size:13px;font-weight:700;
+  display:flex;flex-direction:column;align-items:center;gap:8px;transition:.25s;position:relative;overflow:hidden
+}
+.qb:before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#ef4444,#f97316,#fbbf24);opacity:0;transition:.25s}
+.qb:hover:before,.qb:active:before{opacity:1}
+.qb:hover{box-shadow:0 12px 32px rgba(239,68,68,.3),0 0 40px rgba(249,115,22,.2);border-color:rgba(249,115,22,.5)}
+.qb:active{transform:scale(.96)}
+.qb .qi{font-size:24px}
+
+.dc{
+  display:flex;align-items:center;gap:14px;
+  background:linear-gradient(180deg,var(--cd),#170606);
+  border:1px solid var(--ln);border-radius:20px;padding:15px;margin-bottom:11px;
+  cursor:pointer;transition:.25s
+}
+.dc.done{border-color:rgba(34,197,94,.4)}
+.dc.cur{
+  border-color:rgba(249,115,22,.7);
+  box-shadow:0 0 0 1px rgba(239,68,68,.4),0 12px 35px rgba(239,68,68,.3),0 0 50px rgba(249,115,22,.2);
+  background:radial-gradient(250px 120px at 100% 0%,rgba(249,115,22,.25),transparent),linear-gradient(180deg,var(--cd),#170606)
+}
+.dc.locked{opacity:.5;cursor:not-allowed;background:linear-gradient(180deg,#100404,#0a0202)}
+.dn{min-width:56px;height:56px;border-radius:17px;display:grid;place-items:center;font-weight:800;font-size:13px;text-align:center;background:rgba(255,255,255,.06);border:1px solid var(--ln);color:var(--mu);line-height:1.2}
+.dc.cur .dn{background:linear-gradient(135deg,#ef4444,#f97316,#fbbf24);color:#fff;border:none;box-shadow:0 8px 25px rgba(239,68,68,.6),0 0 35px rgba(249,115,22,.4)}
+.dc.done .dn{background:rgba(34,197,94,.18);color:#7ef0a8;border-color:rgba(34,197,94,.35)}
+.dc.locked .dn{background:rgba(255,255,255,.03);color:#7a5a4a}
+.di{flex:1;min-width:0}
+.di h4{font-size:15px;margin-bottom:4px}
+.di .sub{font-size:12px;color:var(--mu)}
+.di .lockmsg{font-size:11px;color:#fbbf24;font-weight:700;margin-top:4px;display:flex;align-items:center;gap:5px}
+
+.bb{background:none;border:none;color:var(--mu);font-family:inherit;font-size:14px;font-weight:700;padding:8px 0;cursor:pointer;margin-bottom:6px}
+
+.dh{
+  background:radial-gradient(500px 180px at 100% 0%,rgba(239,68,68,.45),transparent 70%),radial-gradient(300px 180px at 0% 100%,rgba(249,115,22,.3),transparent 70%),linear-gradient(180deg,var(--cd),#170606);
+  border:1px solid var(--ln);border-radius:22px;padding:20px;margin-bottom:14px;box-shadow:0 15px 40px rgba(239,68,68,.2)
+}
+.dh .tg{display:inline-block;font-size:11px;font-weight:800;padding:5px 12px;border-radius:99px;margin-bottom:10px;background:linear-gradient(135deg,#ef4444,#f97316,#fbbf24);color:#fff;box-shadow:0 6px 18px rgba(239,68,68,.55)}
+.dh h1{font-size:22px;margin-bottom:8px;line-height:1.4}
+.dh .mt{font-size:13px;color:var(--mu)}
+
+.sc{padding:16px;transition:.25s}
+.sc.done{border-color:rgba(34,197,94,.35)}
+.sh{display:flex;justify-content:space-between;gap:10px;margin-bottom:10px;align-items:flex-start}
+.st{font-size:15px;font-weight:800;line-height:1.5}
+.stm{font-size:12px;color:var(--mu);margin-top:3px}
+.ck{min-width:36px;height:36px;border-radius:12px;cursor:pointer;background:rgba(255,255,255,.05);border:1px solid var(--ln);color:var(--mu);font-size:16px;font-family:inherit;display:grid;place-items:center;transition:.25s}
+.ck.on{background:rgba(34,197,94,.2);border-color:rgba(34,197,94,.55);color:#7ef0a8;box-shadow:0 0 15px rgba(34,197,94,.35)}
+
+.steps{list-style:none;counter-reset:s;margin:10px 0}
+.steps li{counter-increment:s;position:relative;padding:8px 42px 8px 0;font-size:14px;color:#fde4d0;line-height:1.8}
+.steps li:before{content:counter(s);position:absolute;right:0;top:9px;width:28px;height:28px;border-radius:10px;display:grid;place-items:center;font-size:12px;font-weight:800;background:linear-gradient(135deg,rgba(239,68,68,.35),rgba(249,115,22,.3));color:#fed7aa;border:1px solid rgba(251,146,60,.4)}
+.rb{background:linear-gradient(135deg,rgba(239,68,68,.12),rgba(249,115,22,.08));border:1px dashed rgba(249,115,22,.5);border-radius:14px;padding:13px 15px;margin:10px 0;box-shadow:inset 0 0 20px rgba(249,115,22,.06)}
+.rl{font-size:12px;font-weight:800;color:#fbbf24;margin-bottom:6px}
+.rbd{font-size:15px;line-height:2;color:#fff5ed;font-weight:600;white-space:pre-wrap}
+
+.rc{background:linear-gradient(180deg,var(--cd2),var(--cd));border:1px solid var(--ln);border-radius:20px;padding:20px;text-align:center}
+.rt{font-size:46px;font-weight:800;letter-spacing:2px;font-variant-numeric:tabular-nums;margin-bottom:4px;background:linear-gradient(135deg,#fff,#fbbf24,#f97316);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rs{font-size:13px;color:var(--mu);margin-bottom:16px;min-height:20px}
+.rd{display:inline-block;width:9px;height:9px;border-radius:50%;background:#ef4444;margin-inline-end:6px;animation:pl 1s infinite}
+@keyframes pl{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(239,68,68,.7)}50%{opacity:.4;box-shadow:0 0 0 6px rgba(239,68,68,0)}}
+.rctl{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.rctl .btn{flex:1;min-width:140px}
+audio{width:100%;height:42px;border-radius:12px;margin-top:14px;filter:invert(.92) hue-rotate(180deg) saturate(.85)}
+.ri{background:rgba(249,115,22,.04);border:1px solid var(--ln);border-radius:14px;padding:13px;margin-bottom:10px}
+.rih{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px}
+.rn{font-weight:800}.rdt{color:var(--mu);font-size:11px}
+
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.stt{background:linear-gradient(180deg,rgba(249,115,22,.1),rgba(249,115,22,.02));border:1px solid var(--ln);border-radius:14px;padding:14px;text-align:center}
+.stt .v{font-size:22px;font-weight:800;background:linear-gradient(135deg,#fff,#fbbf24);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stt .k{font-size:11px;color:var(--mu);margin-top:3px}
+
+.rr{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.rbt{width:36px;height:36px;border-radius:11px;cursor:pointer;font-family:inherit;background:rgba(255,255,255,.05);border:1px solid var(--ln);color:var(--mu);font-weight:800;font-size:13px;transition:.15s}
+.rbt.on{background:linear-gradient(135deg,#ef4444,#f97316,#fbbf24);color:#fff;border:none;box-shadow:0 6px 18px rgba(249,115,22,.55)}
+
+.bn{
+  position:fixed;bottom:0;left:0;right:0;z-index:60;
+  display:flex;justify-content:space-around;
+  background:rgba(20,4,4,.96);backdrop-filter:blur(20px);
+  border-top:1px solid var(--ln);
+  padding:7px 5px calc(7px + env(safe-area-inset-bottom))
+}
+.nb{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;color:var(--mu);font-family:inherit;font-size:10px;font-weight:700;padding:7px 2px;border-radius:14px;cursor:pointer;transition:.25s}
+.nb .ic{font-size:19px}
+.nb.on{color:#fff;background:linear-gradient(180deg,rgba(249,115,22,.4),rgba(249,115,22,0))}
+.nb.on .ic{filter:drop-shadow(0 0 10px rgba(251,191,36,.95))}
+
+.ftr{text-align:center;padding:26px 14px 10px;color:var(--mu);font-size:12px;line-height:2}
+.ftr .ln{height:1px;background:var(--ln);margin-bottom:18px}
+
+#to{
+  position:fixed;bottom:96px;left:50%;transform:translateX(-50%) translateY(20px);
+  background:linear-gradient(135deg,#ef4444,#f97316,#fbbf24);
+  color:#fff;padding:12px 22px;border-radius:99px;font-size:14px;font-weight:700;
+  z-index:300;opacity:0;pointer-events:none;transition:.3s;white-space:nowrap;
+  box-shadow:0 14px 38px rgba(239,68,68,.65),0 0 60px rgba(249,115,22,.35);max-width:90vw
+}
+#to.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+.cg{
+  text-align:center;padding:30px 18px;
+  background:radial-gradient(500px 250px at 50% 0%,rgba(239,68,68,.5),transparent 70%),radial-gradient(300px 200px at 50% 100%,rgba(249,115,22,.3),transparent 70%),linear-gradient(180deg,var(--cd),#170606);
+  border:1px solid rgba(249,115,22,.45);border-radius:26px;margin-bottom:14px;box-shadow:0 20px 60px rgba(239,68,68,.25)
+}
+.cg .tr{font-size:66px;margin-bottom:10px;display:block;animation:fl 3s ease-in-out infinite}
+.cg h1{font-size:24px;margin-bottom:8px}
+
+.lockbig{
+  text-align:center;padding:34px 20px;
+  background:radial-gradient(400px 200px at 50% 0%,rgba(249,115,22,.25),transparent 70%),linear-gradient(180deg,#1f0a0a,#0f0505);
+  border:1px solid rgba(249,115,22,.4);border-radius:22px;margin-bottom:14px
+}
+.lockbig .ic{font-size:60px;margin-bottom:12px;display:block;opacity:.9;filter:drop-shadow(0 8px 25px rgba(249,115,22,.6))}
+.lockbig h2{font-size:20px;margin-bottom:8px;color:#fbbf24}
+.lockbig .cdown{font-size:36px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:2px;background:linear-gradient(135deg,#fff,#fbbf24,#f97316);-webkit-background-clip:text;background-clip:text;color:transparent;margin:14px 0}
+
+#certWrap{
+  background:radial-gradient(circle at 20% 20%,rgba(212,175,55,.12),transparent 50%),radial-gradient(circle at 80% 80%,rgba(212,175,55,.1),transparent 50%),linear-gradient(135deg,#1a0f0a 0%,#2a1a12 50%,#1a0f0a 100%);
+  border-radius:22px;padding:12px;margin-bottom:14px;box-shadow:0 25px 70px rgba(0,0,0,.7),0 0 0 1px rgba(212,175,55,.3)
+}
+.cert{
+  background:radial-gradient(circle at 50% 0%,rgba(212,175,55,.2),transparent 50%),radial-gradient(circle at 50% 100%,rgba(212,175,55,.14),transparent 50%),linear-gradient(135deg,#1f1410 0%,#2d1d14 50%,#1f1410 100%);
+  border:3px double var(--gold);border-radius:16px;padding:22px 16px;
+  position:relative;overflow:hidden;font-family:"Amiri","Noto Naskh Arabic","Segoe UI",serif;
+  box-shadow:inset 0 0 60px rgba(212,175,55,.12),inset 0 0 100px rgba(0,0,0,.4)
+}
+.cert:before,.cert:after{content:'';position:absolute;left:12px;right:12px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.cert:before{top:12px}.cert:after{bottom:12px}
+.cert-corner{position:absolute;width:36px;height:36px;border:2px solid var(--gold);pointer-events:none;opacity:.9}
+.cert-corner.tl{top:8px;left:8px;border-right:none;border-bottom:none;border-top-left-radius:8px}
+.cert-corner.tr{top:8px;right:8px;border-left:none;border-bottom:none;border-top-right-radius:8px}
+.cert-corner.bl{bottom:8px;left:8px;border-right:none;border-top:none;border-bottom-left-radius:8px}
+.cert-corner.br{bottom:8px;right:8px;border-left:none;border-top:none;border-bottom-right-radius:8px}
+.cert-top{text-align:center;padding-top:6px;position:relative;z-index:2}
+.cert-emblem{width:78px;height:78px;margin:0 auto 8px;border-radius:50%;display:grid;place-items:center;font-size:36px;background:radial-gradient(circle,rgba(212,175,55,.35),rgba(212,175,55,.05));border:2px solid var(--gold);box-shadow:0 0 35px rgba(212,175,55,.55),inset 0 0 25px rgba(212,175,55,.2)}
+.cert-brand{font-size:22px;font-weight:800;letter-spacing:3px;background:linear-gradient(135deg,var(--gold2),var(--gold),var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:2px;text-shadow:0 0 30px rgba(212,175,55,.4)}
+.cert-sub{font-size:11px;letter-spacing:4px;color:var(--gold2);opacity:.95;margin-bottom:16px;font-family:"Segoe UI",sans-serif}
+.cert-title{font-size:26px;font-weight:800;color:var(--gold2);margin:14px 0 4px;letter-spacing:2px;text-shadow:0 0 25px rgba(212,175,55,.6)}
+.cert-title-sub{font-size:13px;color:#e8d8b8;opacity:.9;margin-bottom:18px;letter-spacing:1px}
+.cert-name{font-size:30px;font-weight:800;color:#fff;padding:10px 16px;margin:6px auto 14px;max-width:90%;background:linear-gradient(90deg,transparent,rgba(212,175,55,.15),transparent);border-top:1px solid rgba(212,175,55,.4);border-bottom:1px solid rgba(212,175,55,.4);letter-spacing:1px;text-shadow:0 2px 25px rgba(212,175,55,.6)}
+.cert-reason{font-size:13px;color:#e8d8b8;line-height:1.9;margin:10px 14px 16px}
+.cert-program{display:inline-block;padding:8px 20px;margin:6px 0 10px;border:1px solid var(--gold);border-radius:99px;color:var(--gold2);font-size:14px;font-weight:800;letter-spacing:2px;background:rgba(212,175,55,.1);box-shadow:0 0 20px rgba(212,175,55,.25)}
+.cert-duration{font-size:12px;color:#c9b585;margin-bottom:18px}
+.cert-divider{height:1px;margin:16px 8px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.cert-skills{text-align:right;font-size:12.5px;color:#e8d8b8;margin:8px 8px 14px;line-height:2.1;font-family:"Segoe UI","Noto Kufi Arabic",sans-serif}
+.cert-skills .sk{display:block;padding-right:2px}
+.cert-rank{text-align:center;margin:14px 0 8px}
+.cert-rank-label{font-size:12px;color:#c9b585;letter-spacing:2px;margin-bottom:6px}
+.cert-rank-value{display:inline-block;padding:8px 18px;border:1px solid var(--gold);border-radius:8px;color:var(--gold2);font-weight:800;font-size:15px;letter-spacing:3px;background:linear-gradient(135deg,rgba(212,175,55,.18),rgba(212,175,55,.05));font-family:"Segoe UI",sans-serif}
+.cert-level{font-size:12px;color:#e8d8b8;margin-top:8px;letter-spacing:1px}
+.cert-meta{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 8px 10px;font-size:11.5px;color:#c9b585;font-family:"Segoe UI","Noto Kufi Arabic",sans-serif}
+.cert-meta div{background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.35);border-radius:8px;padding:8px;text-align:center}
+.cert-meta b{color:var(--gold2);display:block;margin-top:2px;font-size:12.5px}
+.cert-stamp{text-align:center;margin:16px auto 12px;width:120px;padding:10px;border:2px solid var(--gold);border-radius:12px;transform:rotate(-8deg);background:radial-gradient(circle,rgba(212,175,55,.22),transparent);box-shadow:0 0 30px rgba(212,175,55,.35),inset 0 0 20px rgba(212,175,55,.12)}
+.cert-stamp .s1{font-size:16px;font-weight:800;color:var(--gold2);letter-spacing:1px}
+.cert-stamp .s2{font-size:10px;color:#c9b585;letter-spacing:3px;margin-top:2px}
+.cert-stamp .s3{font-size:9px;color:#a89670;letter-spacing:2px;margin-top:4px}
+.cert-signs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 8px 10px;text-align:center;font-family:"Segoe UI","Noto Kufi Arabic",sans-serif}
+.cert-sign{padding-top:26px;border-top:1px solid rgba(212,175,55,.5);font-size:11px;color:#c9b585;position:relative}
+.cert-sign b{display:block;color:#e8d8b8;margin-top:4px;font-size:12px}
+.cert-sign a{color:var(--gold2);text-decoration:none;font-weight:700}
+.cert-footer{text-align:center;margin-top:14px;padding-top:12px;border-top:1px solid rgba(212,175,55,.35);font-family:"Segoe UI","Noto Kufi Arabic",sans-serif}
+.cert-footer .f1{font-size:14px;font-weight:800;letter-spacing:4px;background:linear-gradient(135deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.cert-footer .f2{font-size:10px;color:#c9b585;letter-spacing:3px;margin-top:3px}
+.cert-footer .f3{font-size:9.5px;color:#a89670;margin-top:10px}
+.cert-footer .f4{font-size:10px;color:#c9b585;margin-top:6px}
+.cert-actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.cert-actions .btn{flex:1;min-width:140px}
+
+.avatar-wrap{position:relative;display:inline-block;margin:0 auto 12px}
+.avatar{
+  width:110px;height:110px;border-radius:50%;
+  display:grid;place-items:center;font-size:46px;
+  background:linear-gradient(135deg,#ef4444,#f97316,#fbbf24);
+  box-shadow:0 14px 40px rgba(239,68,68,.6),0 0 60px rgba(249,115,22,.35);
+  overflow:hidden;position:relative;cursor:pointer;
+  border:3px solid rgba(251,191,36,.5)
+}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.avatar-edit{
+  position:absolute;bottom:2px;left:2px;
+  width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(135deg,#ef4444,#f97316);
+  border:3px solid #140404;display:grid;place-items:center;
+  font-size:16px;cursor:pointer;color:#fff;padding:0;
+  box-shadow:0 6px 18px rgba(239,68,68,.7)
+}
+.avatar-edit:active{transform:scale(.9)}
+
+.modal-bg{
+  position:fixed;inset:0;z-index:400;
+  background:rgba(0,0,0,.8);backdrop-filter:blur(10px);
+  display:flex;align-items:flex-start;justify-content:center;
+  padding:18px;overflow-y:auto
+}
+.modal-box{
+  background:linear-gradient(180deg,#1f0a0a,#170606);
+  border:1px solid rgba(249,115,22,.45);
+  border-radius:22px;padding:20px;max-width:520px;width:100%;
+  margin:auto;position:relative;
+  box-shadow:0 25px 70px rgba(0,0,0,.75),0 0 60px rgba(239,68,68,.25)
+}
+.modal-box h2{font-size:19px;margin-bottom:6px;color:#fbbf24;padding-left:40px}
+.modal-box>p{font-size:13px;color:#c4a89c;margin-bottom:14px}
+.modal-close{
+  position:absolute;top:14px;left:14px;
+  background:rgba(255,255,255,.08);border:1px solid var(--ln);
+  color:#fff;width:34px;height:34px;border-radius:12px;
+  font-size:18px;cursor:pointer;line-height:1
+}
+.modal-close:active{transform:scale(.9)}
+
+@media(max-width:420px){
+  .cert{padding:16px 10px}
+  .cert-name{font-size:24px}
+  .cert-title{font-size:22px}
+  .cert-emblem{width:64px;height:64px;font-size:30px}
+  .cert-brand{font-size:18px;letter-spacing:2px}
+  .cert-skills{font-size:11.5px}
+  .cert-meta{font-size:10.5px}
+  .cert-stamp{width:100px;padding:8px}
+  .avatar{width:96px;height:96px;font-size:40px}
+}
+@media(max-width:380px){
+  .rt{font-size:36px}
+  .qg{grid-template-columns:1fr}
+  .br small{display:none}
+}
+</style>
+</head>
+<body>
+
+<div id="welc">
+<div class="wb">
+<div class="wl" id="wl">🎙️</div>
+<h1>مرحبًا بك في <span id="wn">DUBAJ PRO</span></h1>
+<p>هنا تبدأ رحلتك لتطوير صوتك وتعلم فن الدبلجة خلال 10 أيام.<br>هل أنت مستعد؟</p>
+<input id="inp" class="ni" type="text" placeholder="اكتب اسمك الكامل *" autocomplete="off" required>
+<p class="sm mu" style="margin:-6px 0 12px;font-size:11px">* الاسم سيظهر على شهادة التقدير</p>
+<button class="btn bp" id="sb" type="button">🚀 ابدأ الكورس</button>
+<div style="margin-top:24px"><a id="wt" class="tt" target="_blank" rel="noopener">TikTok</a></div>
+<p class="sm mu" style="margin-top:22px">© 2026 <span class="an">DUBAJ PRO</span></p>
+</div>
+</div>
+
+<div id="ma" class="hide">
+<header class="hd">
+<div class="br">
+<div class="lg" id="hl">🎙️</div>
+<div><span id="hn">DUBAJ PRO</span></div>
+</div>
+<a id="ht" class="tt" target="_blank" rel="noopener">TikTok</a>
+</header>
+
+<div class="wrap">
+
+<section id="v-home" class="view">
+<div class="card hero">
+<div id="hg" style="font-size:20px;font-weight:800;margin-bottom:4px">أهلاً بك 👋</div>
+<p class="mu sm" id="hs">لنبدأ رحلتك</p>
+<div class="ph" style="margin-top:16px"><span>نسبة التقدم</span><b id="hp">0%</b></div>
+<div class="bar"><span id="hb" style="width:0%"></span></div>
+<div class="ph"><span id="hdl">اليوم 1 من 10</span><span id="htl">0 مهمة</span></div>
+</div>
+
+<div class="qg">
+<button class="qb" onclick="cont()"><span class="qi">▶️</span><span>متابعة التدريب</span></button>
+<button class="qb" onclick="sv('record')"><span class="qi">🎙️</span><span>تسجيل صوت</span></button>
+<button class="qb" onclick="sv('course')"><span class="qi">📚</span><span>جميع الأيام</span></button>
+<button class="qb" onclick="sv('progress')"><span class="qi">🏆</span><span>إنجازي</span></button>
+</div>
+
+<div class="card" style="border-color:rgba(249,115,22,.4);background:linear-gradient(180deg,rgba(249,115,22,.08),transparent)">
+<h3>📋 طريقة الاستخدام</h3>
+<ul class="steps" style="margin-top:8px">
+<li>خصص يوميًا 90–180 دقيقة حسب اليوم.</li>
+<li>سجل كل تمرين بصوتك.</li>
+<li>احتفظ بالتسجيلات ولا تحذف النسخ القديمة.</li>
+<li>لا تحاول جعل صوتك مختلفًا بالقوة؛ ركز على الأداء الطبيعي.</li>
+<li>عند الشعور بألم أو إجهاد في الحنجرة، توقف وخذ راحة.</li>
+</ul>
+</div>
+
+<div class="card">
+<div class="ph" style="margin-bottom:8px"><span>🎯 مهمة اليوم</span><span id="htn" class="mu sm">اليوم 1</span></div>
+<h2 id="htt">التحكم بالصوت والنَفَس</h2>
+<p class="mu sm" id="htg" style="margin-bottom:14px"></p>
+<button class="btn bp" onclick="cont()">▶️ ابدأ مهمة اليوم</button>
+</div>
+
+<div class="card">
+<h3>📈 آخر ما وصلت إليه</h3>
+<p class="mu sm" id="hls">لم تبدأ أي تدريب بعد.</p>
+</div>
+
+<div class="card" style="border-color:rgba(251,191,36,.45);background:linear-gradient(135deg,rgba(251,191,36,.1),rgba(249,115,22,.04));text-align:center">
+<h3 style="color:#fbbf24">🎯 قاعدة الكورس</h3>
+<p style="font-size:14px;line-height:1.9;color:#fde4d0;margin-top:8px">
+الدبلجة ليست مجرد تغيير الصوت.<br>
+<b style="color:#fbbf24">الدبلجة = تمثيل + توقيت + نطق + إحساس + تسجيل + مكساج.</b>
+</p>
+</div>
+
+<div class="ftr"><div class="ln"></div><p>© 2026 <b class="an">DUBAJ PRO</b></p><p>صُنع بواسطة <b id="fo">دبلجة الأنمي</b></p><div style="margin-top:12px"><a id="ft" class="tt" target="_blank" rel="noopener">TikTok</a></div></div>
+</section>
+
+<section id="v-course" class="view hide">
+<div class="card hero">
+<h2>📚 الأيام العشرة</h2>
+<p class="mu sm">كل يوم يُفتح بعد 24 ساعة من إكمال اليوم السابق.</p>
+<div class="bar"><span id="cb" style="width:0%"></span></div>
+<p class="mu sm" id="cp">0% مكتمل</p>
+</div>
+<div id="cl"></div>
+</section>
+
+<section id="v-day" class="view hide"></section>
+
+<section id="v-record" class="view hide">
+<div class="card hero">
+<h2>🎙️ استوديو التسجيل</h2>
+<p class="mu sm">سجّل تدريباتك واحتفظ بها.</p>
+</div>
+<div class="card">
+<label class="sm mu" style="display:block;margin-bottom:8px">اختر اليوم:</label>
+<select id="rds" class="ni" style="text-align:right;margin-bottom:14px"></select>
+<div id="rh"></div>
+</div>
+<div class="card"><h3>📁 تسجيلات هذا اليوم</h3><div id="rl"></div></div>
+<div class="card"><h3>📂 كل تسجيلاتي</h3><div id="arl"></div></div>
+</section>
+
+<section id="v-progress" class="view hide">
+<div class="card hero">
+<h2>📈 تطوري في الدبلجة</h2>
+<p class="mu sm" id="pm">استمع إلى صوتك في اليوم الأول، ثم قارنه بصوتك اليوم.</p>
+</div>
+<div class="card"><h3>نسبة الإنجاز لكل يوم</h3><div id="pb" style="margin-top:12px"></div></div>
+<div class="card">
+<h3>🎧 مقارنة التسجيلات</h3>
+<select id="cd" class="ni" style="text-align:right;margin-top:8px" onchange="rcmp()"></select>
+<div id="cl2" style="margin-top:14px"></div>
+</div>
+<div class="card">
+<h3>📝 تقييمي اليدوي</h3>
+<p class="mu sm">قيّم أداءك بعد كل يوم (1 = ضعيف، 10 = ممتاز).</p>
+<div id="rtl" style="margin-top:14px"></div>
+</div>
+</section>
+
+<section id="v-profile" class="view hide">
+<div class="card hero" style="text-align:center">
+<div class="avatar-wrap">
+<div class="avatar" id="profileAvatar" onclick="document.getElementById('avatarInput').click()">👤</div>
+<button class="avatar-edit" type="button" onclick="document.getElementById('avatarInput').click()">📷</button>
+<input type="file" id="avatarInput" accept="image/*" style="display:none" onchange="uploadAvatar(event)">
+</div>
+<h2 id="pn">مستخدم دوبلاج</h2>
+<p class="mu sm">عضو في DUBAJ PRO</p>
+</div>
+
+<div class="card" style="border-color:rgba(212,175,55,.5);background:radial-gradient(circle at 50% 0%,rgba(212,175,55,.2),transparent 70%),linear-gradient(180deg,#1a1210,#0f0a08);text-align:center">
+<h3 style="color:#f4d47c;margin-bottom:14px">🏅 مستواك الحالي</h3>
+<div id="rankBox"></div>
+</div>
+
+<div class="sg" style="margin-bottom:14px">
+<div class="stt"><div class="v" id="pd">0</div><div class="k">أيام مكتملة</div></div>
+<div class="stt"><div class="v" id="pp">0%</div><div class="k">نسبة الإنجاز</div></div>
+<div class="stt"><div class="v" id="pr">0</div><div class="k">تسجيلات</div></div>
+<div class="stt"><div class="v" id="pc">1</div><div class="k">اليوم الحالي</div></div>
+</div>
+<div class="card">
+<div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--ln)"><span class="mu sm">تاريخ البدء</span><b id="ps" class="sm">—</b></div>
+<div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--ln)"><span class="mu sm">المهام المكتملة</span><b id="pt" class="sm">0</b></div>
+<div style="display:flex;justify-content:space-between;padding:9px 0"><span class="mu sm">الحالة</span><b id="pst" class="sm">قيد التقدم</b></div>
+</div>
+<div class="card">
+<h3>🎓 شهادة التقدير</h3>
+<p class="mu sm" style="margin-bottom:12px" id="certHint">أكمل الأيام العشرة لفتح شهادتك تلقائيًا.</p>
+<button class="btn bp" onclick="openCert()">🎓 عرض الشهادة</button>
+</div>
+<div class="card"><button class="btn bd" onclick="rst()">🔄 إعادة الكورس</button></div>
+<div class="ftr"><div class="ln"></div><p>© 2026 <b class="an">DUBAJ PRO</b></p><div style="margin-top:12px"><a id="pt2" class="tt" target="_blank" rel="noopener">TikTok</a></div></div>
+</section>
+
+<section id="v-finish" class="view hide">
+<div class="cg">
+<span class="tr">🏆</span>
+<h1>🎉 مبروك!</h1>
+<p class="mu">لقد أكملت كورس <b class="an">DUBAJ PRO</b> كاملًا</p>
+</div>
+<div class="sg" style="margin-bottom:14px">
+<div class="stt"><div class="v">✅ 10</div><div class="k">أيام مكتملة</div></div>
+<div class="stt"><div class="v" id="fr">🎙️ 0</div><div class="k">تدريبات صوتية</div></div>
+<div class="stt"><div class="v">📚 10</div><div class="k">دروس كاملة</div></div>
+<div class="stt"><div class="v">🏆 1</div><div class="k">مشروع تخرج</div></div>
+</div>
+<div class="card" style="border-color:rgba(212,175,55,.5);background:radial-gradient(circle at 50% 0%,rgba(212,175,55,.18),transparent 70%),linear-gradient(180deg,#1a1210,#0f0a08)">
+<h3 style="color:#f4d47c;text-align:center;margin-bottom:14px">🏅 مستواك النهائي</h3>
+<div id="rankBox2"></div>
+</div>
+<div class="card">
+<h3>🎓 شهادة التقدير</h3>
+<p class="mu sm" style="margin-bottom:14px">اضغط لعرض شهادتك الجميلة وحفظها كصورة.</p>
+<button class="btn bp" onclick="openCert()">🎓 عرض شهادة التقدير</button>
+</div>
+<button class="btn bg" onclick="sv('home')">🏠 العودة للرئيسية</button>
+</section>
+
+<section id="v-cert" class="view hide">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+<button class="bb" onclick="sv('finish')" style="padding:8px 0">→ رجوع</button>
+<span class="sm mu">شهادة التقدير</span>
+</div>
+
+<div id="certWrap">
+<div class="cert" id="certBox">
+<div class="cert-corner tl"></div>
+<div class="cert-corner tr"></div>
+<div class="cert-corner bl"></div>
+<div class="cert-corner br"></div>
+
+<div class="cert-top">
+<div class="cert-emblem">🏛️</div>
+<div class="cert-brand">DUBAJ PRO</div>
+<div class="cert-sub">ACADEMY OF DUBBING</div>
+<div class="cert-title">🏆 شـهـادة إتـمـام 🏆</div>
+<div class="cert-title-sub">تُمنح إلى</div>
+</div>
+
+<div class="cert-name" id="certName">اسم المتدرب</div>
+
+<p class="cert-reason">تقديرًا لإتمامه بنجاح البرنامج التدريبي</p>
+
+<div style="text-align:center">
+<div class="cert-program">🎙️ 𝐏𝐑𝐎 𝐃𝐔𝐁𝐁𝐈𝐍𝐆 🎙️</div>
+<div style="font-size:13px;color:#e8d8b8;margin-bottom:4px">برنامج احتراف الدبلجة</div>
+<div class="cert-duration">مدة البرنامج: 10 أيام</div>
+</div>
+
+<div class="cert-divider"></div>
+
+<p style="text-align:center;font-size:13px;color:#e8d8b8;line-height:1.9;margin:0 10px">
+تشهد إدارة DUBAJ PRO بأن المتدرب المذكور أعلاه
+قد أتم جميع مراحل البرنامج التدريبي بنجاح،
+وأكمل التدريبات العملية المخصصة لتطوير مهاراته في:
+</p>
+
+<div class="cert-skills">
+<span class="sk">🎙️ الأداء الصوتي والتحكم بالنَفَس</span>
+<span class="sk">🎭 التمثيل والتعبير عن المشاعر</span>
+<span class="sk">🗣️ النطق والوضوح</span>
+<span class="sk">👤 بناء وأداء الشخصيات الصوتية</span>
+<span class="sk">⏱️ المزامنة مع حركة الفم</span>
+<span class="sk">🎧 التسجيل ومعالجة الصوت</span>
+<span class="sk">🎚️ المكساج والمؤثرات الصوتية</span>
+<span class="sk">🎬 تنفيذ مشروع الدبلجة النهائي</span>
+</div>
+
+<div class="cert-divider"></div>
+
+<div class="cert-rank">
+<div class="cert-rank-label">🎖️ رتبة المتدرب</div>
+<div class="cert-rank-value">DUBBING TRAINEE</div>
+<div class="cert-level">المستوى: 【 مكتمل — 10 / 10 】</div>
+<div id="certRank" style="margin-top:12px;font-size:22px;font-weight:800;text-align:center;letter-spacing:1px"></div>
+<div id="certRankDesc" style="margin-top:4px;font-size:12px;color:#c9b585;text-align:center"></div>
+</div>
+
+<div class="cert-divider"></div>
+
+<div class="cert-meta">
+<div>تاريخ الإتمام<b id="certDate">—</b></div>
+<div>رقم الشهادة<b id="certNo">DBP-2026-0001</b></div>
+</div>
+
+<div class="cert-stamp">
+<div class="s1">✓ COMPLETED</div>
+<div class="s2">DUBAJ PRO</div>
+<div class="s3">الختم الرسمي</div>
+</div>
+
+<div class="cert-signs">
+<div class="cert-sign">التوقيع الرسمي<b style="font-family:'Brush Script MT','Segoe Script',cursive;font-size:18px;color:#f4d47c">دبلجة الأنمي</b></div>
+<div class="cert-sign">تابعنا على TikTok<b><a id="certTikTokLink" href="#" target="_blank" rel="noopener">@.gxsar</a></b></div>
+</div>
+
+<div class="cert-footer">
+<div class="f1">🎙️ DUBAJ PRO</div>
+<div class="f2">Learn • Practice • Perform</div>
+<div class="f3">© 2026 DUBAJ PRO — جميع الحقوق محفوظة</div>
+<div class="f4">TikTok: <span id="certTikTok">@.gxsar</span></div>
+</div>
+</div>
+</div>
+
+<div class="cert-actions">
+<button class="btn bp" onclick="saveCertImage()">💾 حفظ الشهادة كصورة</button>
+<button class="btn bg" onclick="shareCert()">📤 مشاركة</button>
+</div>
+
+<div class="card" style="margin-top:14px">
+<p class="mu sm" style="text-align:center;line-height:2">
+💡 اضغط "حفظ الشهادة كصورة" لتحميلها مباشرة على جهازك كـ PNG عالية الجودة.
+</p>
+</div>
+
+<div class="ftr"><div class="ln"></div><p>© 2026 <b class="an">DUBAJ PRO</b> — جميع الحقوق محفوظة.</p></div>
+</section>
+
+</div>
+
+<nav class="bn">
+<button class="nb on" data-nav="home" onclick="sv('home')"><span class="ic">🏠</span>الرئيسية</button>
+<button class="nb" data-nav="course" onclick="sv('course')"><span class="ic">📚</span>الكورس</button>
+<button class="nb" data-nav="record" onclick="sv('record')"><span class="ic">🎙️</span>التسجيل</button>
+<button class="nb" data-nav="progress" onclick="sv('progress')"><span class="ic">📈</span>تقدمي</button>
+<button class="nb" data-nav="profile" onclick="sv('profile')"><span class="ic">👤</span>حسابي</button>
+</nav>
+</div>
+
+<div id="evalModal" class="modal-bg hide">
+<div class="modal-box">
+<button class="modal-close" onclick="closeEvalModal()" type="button">×</button>
+<h2 id="evalTitle">📤 أرسل تسجيلاتك للتقييم</h2>
+<p id="evalDesc">نزّل التسجيلات من الأسفل، ثم افتح واتساب وأرفقها مع الرسالة الجاهزة.</p>
+
+<div id="evalRecs" style="margin-bottom:14px"></div>
+
+<div class="card" style="background:linear-gradient(180deg,rgba(249,115,22,.12),rgba(249,115,22,.03));border-color:rgba(249,115,22,.4);margin-bottom:14px">
+<h3 style="font-size:14px;color:#fbbf24;margin-bottom:8px">📝 رسالة التقييم الجاهزة</h3>
+<p id="evalMsg" style="font-size:13px;color:#fde4d0;white-space:pre-wrap;line-height:1.9;margin:0"></p>
+</div>
+
+<div class="brw">
+<button class="btn bg" onclick="copyEvalMsg()" type="button">📋 نسخ الرسالة</button>
+<button class="btn bp" onclick="openWhatsAppEval()" type="button">📤 فتح واتساب</button>
+</div>
+</div>
+</div>
+
+<div id="to"></div>
+
+<script>
+var CONFIG={
+  appName:"DUBAJ PRO",
+  appEmoji:"🎙️",
+  ownerName:"دبلجة الأنمي",
+  tiktokUsername:"@.gxsar",
+  logoUrl:"https://cdn.phototourl.com/member/2026-09-27-537f45c4-116c-494c-b54d-6bff574f9ce6.png",
+  storageKey:"dubajpro_v4",
+  dbName:"dubajpro_db",
+  unlockHours:24,
+  whatsappNumber:"218946359507"
+};
+var TIKTOK_LINK="https://www.tiktok.com/"+CONFIG.tiktokUsername.replace(/^@/,"@");
+var UNLOCK_MS=CONFIG.unlockHours*60*60*1000;
+
+var COURSE=[
+{day:1,title:"التحكم بالصوت والنَفَس",duration:"90-120 دقيقة",
+goal:"في أول يوم لن نحاول تقليد أي شخصية. نريد أن تتعلم التحكم في أداتك الأساسية: صوتك. ستتدرب على التنفس، ثبات الصوت، مخارج الكلمات، الوقفات، والتحكم في نهاية الجمل.",
+sections:[
+{id:"d1s1",title:"القسم 1 — إحماء الجسم والصوت",time:"15 دقيقة",
+steps:["اجلس أو قف وظهرك مستقيم بدون شد.","خذ شهيقًا من الأنف لمدة 4 ثوانٍ.","احبس النفس لمدة ثانيتين.","أخرج الهواء لمدة 8 ثوانٍ بصوت «سسسس». كرر التمرين 8 مرات.","خذ نفسًا طبيعيًا، ثم قل «مممم» لمدة 5 ثوانٍ بصوت مريح. كرر 6 مرات.","افتح الفك وأغلقه ببطء 10 مرات.","حرّك الشفتين كأنك تقول «ووو - إييي» بالتبادل 15 مرة.","قل ببطء: «با بي بو - تا تي تو - كا كي كو - ما مي مو»، ثم كررها أسرع 5 مرات."]},
+{id:"d1s2",title:"القسم 2 — التحكم في الهواء",time:"15 دقيقة",
+steps:["قل «سسسس» بأطول مدة تستطيعها بدون ضغط. لا تحبس الهواء بالقوة.","بعدها قل الجملة الأولى مرة واحدة بنَفَس واحد.","ثم قل الجملة الثانية، وضع علامة تنفس في المكان الذي تحتاجه.","كرر الجملة 5 مرات، وحاول في كل مرة تقليل عدد مرات التنفس بدون أن يصبح الصوت ضعيفًا."],
+texts:[{title:"الجملة الأولى",body:"أنا أتكلم بهدوء وثبات."},{title:"الجملة الثانية",body:"أنا أتعلم الدبلجة، وأريد أن أجعل صوتي واضحًا وطبيعيًا ومعبّرًا."}]},
+{id:"d1s3",title:"القسم 3 — ثبات نهاية الجملة",time:"15 دقيقة",
+steps:["اقرأ كل جملة دون أن ينخفض صوتك فجأة في آخر كلمة.","سجل كل جملة 3 مرات: الأولى طبيعية، الثانية بصوت أقوى قليلًا، الثالثة بهدوء شديد مع وضوح الكلمات."],
+texts:[{title:"الجملة 1",body:"أنا أعرف ماذا أريد."},{title:"الجملة 2",body:"لن أهرب هذه المرة."},{title:"الجملة 3",body:"كان يجب أن تخبرني بالحقيقة."},{title:"الجملة 4",body:"لا أعرف ماذا سيحدث بعد ذلك."}]},
+{id:"d1s4",title:"القسم 4 — تمرين القراءة المستمرة",time:"20 دقيقة",
+steps:["اقرأ النص 5 مرات بالطرق التالية:","المرة 1: ببطء شديد مع وضوح كامل.","المرة 2: بسرعة طبيعية.","المرة 3: بسرعة أعلى قليلًا.","المرة 4: بأسلوب درامي معبر.","المرة 5: بأسلوب طبيعي جدًا وكأنك تتحدث مع صديق.","بعد كل تسجيل استمع له واكتب خطأين فقط لاحظتهما."],
+texts:[{title:"النص",body:"منذ فترة وأنا أحاول أن أفهم ما الذي يحدث حولي. كل يوم أقول لنفسي إن الأمور ستتحسن، ثم يحدث شيء جديد يجعلني أعيد التفكير من البداية. ربما لا أملك كل الإجابات، لكنني أعرف شيئًا واحدًا: لن أتوقف عن المحاولة."}]},
+{id:"d1s5",title:"القسم 5 — اختبار اليوم",time:"20 دقيقة",
+steps:["سجل مقطعًا مدته 60-90 ثانية دون توقف.","الممنوع: إعادة الجملة بسبب خطأ صغير، الصراخ، تغيير صوتك بشكل مصطنع.","بعد التسجيل قيّم نفسك من 10 في: وضوح الكلام / النفس / الثبات / الطبيعية / الوقفات.","مهمة إضافية: أعد تسجيل نفس المقطع في نهاية اليوم وقارن التسجيل الأول بالأخير."]}]},
+
+{day:2,title:"المشاعر والتمثيل الصوتي",duration:"90-120 دقيقة",
+goal:"أن تتعلم كيف تجعل الصوت يمثل المشاعر بدل أن تقرأ النص فقط.",
+sections:[
+{id:"d2s1",title:"القسم 1 — تسخين المشاعر",time:"10 دقائق",
+steps:["قل الجملة التالية بثماني حالات مختلفة دون تغيير الكلمات:","سعيدًا، حزينًا، غاضبًا، خائفًا، متفاجئًا، ساخرًا، متوترًا، مرتاحًا."],
+texts:[{title:"الجملة",body:"أنت وصلت أخيرًا."}]},
+{id:"d2s2",title:"القسم 2 — فهم ما وراء الجملة",time:"20 دقيقة",
+steps:["استخدم الجملة: «كنت أنتظرك.»","تخيل المواقف الخمسة التالية وسجل كل موقف على حدة:","1) الشخص الذي تنتظره شخص تحبه.","2) الشخص تأخر وأنت غاضب.","3) الشخص عاد بعد غياب طويل.","4) الشخص أمامك لكنه خذلك.","5) أنت تكذب وتدعي أنك كنت تنتظره.","ركز على التنفس والوقفات، وليس فقط على ارتفاع الصوت."],
+texts:[{title:"الجملة الأساسية",body:"كنت أنتظرك."}]},
+{id:"d2s3",title:"القسم 3 — الانتقال بين المشاعر",time:"20 دقيقة",
+steps:["قل الجملة وابدأ طبيعيًا.","ثم اجعل الشخصية تحاول إخفاء حزنها.","ثم دع الحزن يظهر تدريجيًا.","ثم اجعلها غاضبة لأنها لا تريد أن يكتشف أحد ضعفها.","الهدف أن يتغير الإحساس تدريجيًا خلال الجملة."],
+texts:[{title:"الجملة",body:"لا، أنا بخير."}]},
+{id:"d2s4",title:"القسم 4 — نص تمثيلي طويل",time:"25 دقيقة",
+steps:["سجل النص بثلاث طرق مختلفة:","الطريقة 1: حزن مكتوم.","الطريقة 2: غضب هادئ.","الطريقة 3: انهيار عاطفي بدون صراخ."],
+texts:[{title:"النص التمثيلي",body:"لا تسألني لماذا تأخرت. أنا نفسي لا أعرف. في البداية كنت أعتقد أن كل شيء سيكون سهلًا، وأنني فقط أحتاج إلى بعض الوقت. لكن كلما حاولت أن أصلح شيئًا، ظهر شيء آخر. والآن أنت واقف أمامي وتسألني لماذا تغيرت؟ لأنني تعبت. هذا كل شيء. تعبت من أن أشرح، وتعبت من أن أتصرف وكأن كل شيء بخير."}]},
+{id:"d2s5",title:"القسم 5 — اختبار اليوم",time:"20 دقيقة",
+steps:["اختر مقطعًا من فيلم أو مسلسل مدته 30-60 ثانية.","شاهد المشهد بدون صوت.","اكتب: ماذا تشعر الشخصية؟ ماذا تريد؟ ما الذي حدث قبل الجملة؟","ثم دبلج المشهد.","مهمة اليوم: يجب أن يستطيع شخص يسمع التسجيل بدون رؤية الفيديو معرفة الشعور الأساسي للشخصية."]}]},
+
+{day:3,title:"النطق والسرعة والوضوح",duration:"100-120 دقيقة",
+goal:"التحدث بسرعة مناسبة مع الحفاظ على وضوح كل كلمة.",
+sections:[
+{id:"d3s1",title:"القسم 1 — مخارج الحروف",time:"20 دقيقة",
+steps:["كرر كل مجموعة 5 مرات: را ري رو / لا لي لو / سا سي سو / شا شي شو / صا صي صو / طا طي طو / قا قي قو.","ثم اقرأ الجمل التالية، ابدأ ببطء ثم زد السرعة تدريجيًا."],
+texts:[{title:"الجمل",body:"سافر سامر صباح السبت. / صعد صالح فوق سطح السيارة. / طار طائر صغير فوق الطريق. / قرر خالد العودة قبل غروب الشمس."}]},
+{id:"d3s2",title:"القسم 2 — تمرين اللسان",time:"15 دقيقة",
+steps:["اقرأ الجملة 5 مرات.","في كل مرة زد السرعة قليلًا.","إذا ضاعت كلمة، ارجع خطوة."],
+texts:[{title:"الجملة",body:"في طريق طويل، وقف الرجل للحظة، ثم نظر خلفه، وفكر هل يعود أم يكمل طريقه."}]},
+{id:"d3s3",title:"القسم 3 — السرعة مع الانفعال",time:"20 دقيقة",
+steps:["قل الجملة مرة بسرعة عادية.","مرة بسرعة مع الغضب.","مرة بسرعة مع الخوف.","مرة بسرعة مع محاولة البقاء هادئًا."],
+texts:[{title:"الجملة",body:"اسمعني جيدًا، ليس لدينا وقت، يجب أن نتحرك الآن!"}]},
+{id:"d3s4",title:"القسم 4 — نص سريع",time:"25 دقيقة",
+steps:["سجل النص 4 مرات.","الهدف في المرة الرابعة: السرعة الطبيعية، وليس أسرع سرعة ممكنة."],
+texts:[{title:"النص",body:"أين كنت؟ لقد بحثنا عنك في كل مكان. كان من المفترض أن تكون هنا قبل ساعة. لا تقل لي إنك نسيت، لأننا اتفقنا على هذا منذ الأمس. إذا أردنا أن نصل في الوقت المناسب فعلينا أن نتحرك الآن، وليس بعد خمس دقائق."}]},
+{id:"d3s5",title:"القسم 5 — اختبار الوضوح",time:"20 دقيقة",
+steps:["سجل دقيقة كاملة.","بعدها أغلق الشاشة واستمع فقط.","كل كلمة لم تفهمها فورًا ضع بجانبها علامة.","أعد التسجيل مع التركيز على الكلمات التي أخطأت فيها.","مهمة اليوم: سجل نسختين من نفس النص — نسخة واضحة جدًا، ونسخة سريعة جدًا — ثم اصنع نسخة ثالثة بينهما."]}]},
+
+{day:4,title:"بناء الشخصية الصوتية",duration:"100-120 دقيقة",
+goal:"أن تستطيع إعطاء الشخصية هوية صوتية ثابتة.",
+sections:[
+{id:"d4s1",title:"القسم 1 — تحليل شخصية",time:"20 دقيقة",
+steps:["اختر شخصية خيالية.","اكتب عنها: العمر التقريبي، الطاقة، سرعة الكلام، ارتفاع الصوت، طريقة الضحك، طريقة الغضب، طريقة الخوف.","حدد: هل تتكلم بثقة أم بتردد؟"]},
+{id:"d4s2",title:"القسم 2 — تجربة 5 أصوات",time:"25 دقيقة",
+steps:["استخدم الجملة: «أنت تأخرت كثيرًا.»","سجلها بخمس شخصيات مختلفة:","1) شاب هادئ. 2) شخص مرح. 3) قائد واثق. 4) شخص خائف. 5) شخص غاضب لكنه يحاول التحكم بنفسه.","لا تضغط على حنجرتك ولا تحاول إصدار أصوات مؤذية."],
+texts:[{title:"الجملة",body:"أنت تأخرت كثيرًا."}]},
+{id:"d4s3",title:"القسم 3 — تثبيت الشخصية",time:"20 دقيقة",
+steps:["اختر أفضل شخصية.","قل الجمل العشر التالية بنفس الصوت والأسلوب.","استمع: هل تبدو الجمل وكأنها من الشخص نفسه؟"],
+texts:[{title:"الجمل العشر",body:"ماذا تريد؟ / تعال معي. / أنا لا أثق بك. / لا أعتقد أن هذه فكرة جيدة. / انتظر. / ماذا حدث هنا؟ / لا تلمس هذا. / هل أنت بخير؟ / أخبرني بالحقيقة. / انتهى الأمر."}]},
+{id:"d4s4",title:"القسم 4 — مشهد داخلي",time:"25 دقيقة",
+steps:["سجل النص التالي.","ابدأ بثقة، ثم اجعل الشك يظهر، ثم عد إلى الثبات."],
+texts:[{title:"النص",body:"أنا لا أحتاج أحدًا. أنا أقدر على فعل هذا وحدي. حتى لو فشلت، سأحاول مرة أخرى. لكن... لماذا أشعر أنني خائف؟ لا. لن أتراجع. ليس الآن."}]},
+{id:"d4s5",title:"القسم 5 — اختبار اليوم",time:"20 دقيقة",
+steps:["اختر شخصية واحدة وسجل مونولوجًا مدته دقيقتان.","ممنوع تغيير الشخصية أثناء التسجيل.","احتفظ بالتسجيل كمرجع لصوت الشخصية."]}]},
+
+{day:5,title:"التزامن مع حركة الفم",duration:"100-120 دقيقة",
+goal:"تدريب العين والأذن واللسان على العمل مع الفيديو في الوقت نفسه.",
+sections:[
+{id:"d5s1",title:"القسم 1 — المراقبة",time:"15 دقيقة",
+steps:["اختر مشهدًا قصيرًا مدته 20-40 ثانية.","شاهده 5 مرات بدون تسجيل، وفي كل مرة ركز على شيء واحد:","المرة 1: الأحداث. المرة 2: بداية الجمل. المرة 3: نهاية الجمل. المرة 4: حركة الفم. المرة 5: الوقفات والتنفس."]},
+{id:"d5s2",title:"القسم 2 — تقسيم المشهد",time:"20 دقيقة",
+steps:["اكتب الحوار كل جملة في سطر.","ضع [بداية] عند أول حركة كلام، و[نهاية] عند انتهاء الكلام.","لا تبدأ التسجيل قبل فهم التوقيت."]},
+{id:"d5s3",title:"القسم 3 — دبلجة جملة واحدة",time:"20 دقيقة",
+steps:["اختر جملة قصيرة.","سجلها 10 مرات.","في كل مرة حاول تحسين البداية والنهاية.","اختر أفضل نسخة."]},
+{id:"d5s4",title:"القسم 4 — المشهد الكامل",time:"30 دقيقة",
+steps:["سجل المشهد 5 مرات، وفي كل محاولة أصلح مشكلة واحدة فقط:","المحاولة 1: البداية. المحاولة 2: النهاية. المحاولة 3: السرعة. المحاولة 4: المشاعر. المحاولة 5: كل شيء.","لا تحاول أن تكون مثاليًا من أول مرة."]},
+{id:"d5s5",title:"القسم 5 — اختبار بدون نص",time:"20 دقيقة",
+steps:["شاهد النسخة النهائية دون فتح النص.","ركز على الفم.","إذا لاحظت أن الصوت يتقدم أو يتأخر، عدّل المقطع.","مهمة اليوم: إخراج فيديو 30-60 ثانية تكون فيه بداية ونهاية الحوار متزامنة بوضوح مع الشخصية."]}]},
+
+{day:6,title:"التسجيل المنزلي",duration:"100-120 دقيقة",
+goal:"تعلم صناعة تسجيل نظيف حتى لو كانت أدواتك بسيطة.",
+sections:[
+{id:"d6s1",title:"القسم 1 — اختبار المكان",time:"20 دقيقة",
+steps:["سجل نفس الجملة في 3 أماكن مختلفة.","استمع للثلاثة.","اختر المكان الأقل صدى والأكثر هدوءًا."],
+texts:[{title:"الجملة",body:"هذا هو المكان الذي كنت أبحث عنه."}]},
+{id:"d6s2",title:"القسم 2 — اختبار المسافة",time:"15 دقيقة",
+steps:["سجل على مسافة قريبة، ثم متوسطة، ثم أبعد قليلًا.","اختر المسافة التي تعطي صوتًا واضحًا بدون هواء قوي أو تشويه."]},
+{id:"d6s3",title:"القسم 3 — اختبار مستوى الصوت",time:"15 دقيقة",
+steps:["سجل بصوت منخفض، طبيعي، وعالٍ.","إذا ظهر تشويه في النسخة العالية، لا تستخدمها.","الصوت النظيف أهم من الصوت العالي."]},
+{id:"d6s4",title:"القسم 4 — Takes احترافية",time:"30 دقيقة",
+steps:["سجل النص 5 مرات (5 Takes).","بعدها استمع إليها واكتب أي Take أفضل ولماذا."],
+texts:[{title:"النص",body:"لم أكن مستعدًا لهذا اليوم. كنت أعتقد أن لدي وقتًا كافيًا. لكن عندما وصلت إلى هنا، أدركت أن كل شيء تغير. الآن لا أستطيع الرجوع. ولا أستطيع الانتظار. لذلك سأكمل."}]},
+{id:"d6s5",title:"القسم 5 — تسجيل مشهد",time:"30 دقيقة",
+steps:["سجل مشهدًا مدته دقيقة.","اترك ثانيتين صمتًا في البداية والنهاية.","لا تلمس الهاتف أثناء التسجيل.","مهمة اليوم: احتفظ بالتسجيل الخام بدون أي مؤثرات."]}]},
+
+{day:7,title:"تنظيف الصوت",duration:"100-120 دقيقة",
+goal:"تحويل التسجيل الخام إلى صوت أنظف بدون تدمير طبيعته.",
+sections:[
+{id:"d7s1",title:"القسم 1 — الاستماع",time:"10 دقائق",
+steps:["اسمع التسجيل الخام بالسماعات.","اكتب المشاكل: ضوضاء؟ صدى؟ صوت هواء؟ حروف سين حادة؟ صوت منخفض؟ اختلاف كبير بين الجمل؟"]},
+{id:"d7s2",title:"القسم 2 — تقليل الضوضاء",time:"20 دقيقة",
+steps:["استخدم أداة Noise Reduction إن كانت موجودة.","ابدأ بنسبة خفيفة.","قارن قبل وبعد.","إذا أصبح الصوت معدنيًا أو آليًا، قلل المعالجة."]},
+{id:"d7s3",title:"القسم 3 — EQ",time:"20 دقيقة",
+steps:["لا ترفع أو تخفض كل شيء عشوائيًا.","استمع للمشكلة أولًا.","إذا كان الصوت مكتومًا، جرّب زيادة بسيطة في الوضوح.","إذا كان الصوت مزعجًا أو مكتومًا من الأسفل، جرّب تقليلًا بسيطًا للترددات غير الضرورية."]},
+{id:"d7s4",title:"القسم 4 — Compression",time:"15 دقيقة",
+steps:["استخدم ضغطًا خفيفًا لتقليل الفرق بين الجمل الهادئة والعالية.","بعد التطبيق، اسمع هل أصبح الصوت أكثر ثباتًا بدون أن يفقد طبيعته."]},
+{id:"d7s5",title:"القسم 5 — De-esser",time:"10 دقائق",
+steps:["إذا كانت السينات حادة، استخدم De-esser بدرجة خفيفة.","إذا أصبحت الحروف مكتومة، قلل التأثير."]},
+{id:"d7s6",title:"القسم 6 — مقارنة",time:"20 دقيقة",
+steps:["اصنع نسخة خام ونسخة معالجة.","اسمعهما بالتناوب.","إذا لم تستطع تحديد أن النسخة المعالجة أفضل، لا تضف معالجة إضافية."]},
+{id:"d7s7",title:"القسم 7 — اختبار",time:"20 دقيقة",
+steps:["خذ مشهد اليوم السادس ونظفه بالكامل.","لا تضف Reverb إلا إذا احتجت إليه.","مهمة اليوم: اكتب تحت التسجيل — «ما المشكلة الأساسية في صوتي؟» / «ما الأداة التي أصلحتها؟» / «ما الشيء الذي لن أكرره؟»"]}]},
+
+{day:8,title:"المكساج مع الموسيقى والمؤثرات",duration:"100-120 دقيقة",
+goal:"جعل الحوار جزءًا من المشهد بدل أن يبدو كصوت منفصل فوق الفيديو.",
+sections:[
+{id:"d8s1",title:"القسم 1 — تجهيز الطبقات",time:"15 دقيقة",
+steps:["رتب المشروع: الفيديو/المشهد، الحوار، الموسيقى، المؤثرات.","اجعل كل عنصر في مسار منفصل إذا كان التطبيق يسمح."]},
+{id:"d8s2",title:"القسم 2 — الحوار أولًا",time:"20 دقيقة",
+steps:["شغل الحوار وحده.","تأكد من وضوح كل كلمة.","ثم أضف الموسيقى بصوت منخفض.","ارفعها تدريجيًا حتى تبدأ الكلمات بالاختفاء، ثم ارجع خطوة للخلف."]},
+{id:"d8s3",title:"القسم 3 — المؤثرات",time:"20 دقيقة",
+steps:["أضف فقط المؤثرات الموجودة فعليًا في المشهد.","إذا أغلقت الشخصية بابًا، يمكن إضافة صوت باب.","إذا كانت تمشي، يمكن إضافة خطوات.","لا تجعل المؤثرات أعلى من الحوار بدون سبب."]},
+{id:"d8s4",title:"القسم 4 — الانتقالات",time:"20 دقيقة",
+steps:["راجع بداية ونهاية الموسيقى.","لا تجعلها تبدأ أو تتوقف فجأة إذا كان المشهد يحتاج انتقالًا ناعمًا.","استخدم Fade In / Fade Out عند الحاجة."]},
+{id:"d8s5",title:"القسم 5 — اختبار الأجهزة",time:"20 دقيقة",
+steps:["اسمع المشهد مرة من الهاتف، ومرة بالسماعات.","إذا كان الحوار واضحًا في الاثنين، أنت في اتجاه جيد."]},
+{id:"d8s6",title:"القسم 6 — مهمة عملية",time:"25 دقيقة",
+steps:["اصنع مشهدًا مدته 60 ثانية: حوار + موسيقى + مؤثرين صوتيين على الأقل.","ثم شاهد المشهد كاملًا بدون توقف.","مهمة اليوم: يجب أن تشعر أن الموسيقى والمؤثرات تخدم الحوار والصورة."]}]},
+
+{day:9,title:"دبلجة شخصيتين",duration:"120 دقيقة",
+goal:"تعلم الحفاظ على شخصية مختلفة لكل متحدث، وتسجيل الحوار بطريقة منظمة.",
+sections:[
+{id:"d9s1",title:"القسم 1 — تصميم الشخصيتين",time:"20 دقيقة",
+steps:["الشخصية A: صوت منخفض، كلام هادئ، وقفات قصيرة، شخصية واثقة.","الشخصية B: صوت أعلى قليلًا، أسرع، متوتر، وقفات كثيرة.","يمكنك اختيار مواصفات أخرى، لكن يجب أن يكون الفرق واضحًا."]},
+{id:"d9s2",title:"القسم 2 — جمل منفصلة",time:"20 دقيقة",
+steps:["قل 5 جمل لكل شخصية.","استمع.","إذا اختلطتا، اجعل الفرق في السرعة أو الطاقة أو الطبقة، وليس في الضغط على الحنجرة."]},
+{id:"d9s3",title:"القسم 3 — نص الحوار",time:"25 دقيقة",
+steps:["سجل A وحدها.","ثم B وحدها.","ثم ركب التسجيلين."],
+texts:[{title:"الحوار",body:"A: أنت متأكد أن هذا هو المكان؟\nB: نعم، أنا متأكد.\nA: لا يبدو لي كذلك.\nB: لأنك لا تعرف ماذا تبحث عنه.\nA: وأنت تعرف؟\nB: أكثر منك بكثير.\nA: إذن أرني.\nB: حسنًا. لكن عندما نصل، لا تقل إنني لم أحذرك."}]},
+{id:"d9s4",title:"القسم 4 — الأداء المتفاعل",time:"25 دقيقة",
+steps:["في النسخة الثانية، تخيل أن الشخصيتين أمام بعضهما.","لا تقرأ كل جملة بنفس الطاقة.","استجب للجملة السابقة."]},
+{id:"d9s5",title:"القسم 5 — المشاعر",time:"20 دقيقة",
+steps:["أعد المشهد لكن اجعل A غاضبة وB تحاول تهدئتها.","ثم اعكس الأدوار."]},
+{id:"d9s6",title:"القسم 6 — اختبار اليوم",time:"10 دقائق",
+steps:["اسمع المشهد وأغمض عينيك.","هل تستطيع معرفة من يتكلم بدون رؤية الفيديو؟","مهمة اليوم: إخراج مشهد 60-90 ثانية بشخصيتين مختلفتين بوضوح."]}]},
+
+{day:10,title:"مشروع التخرج الاحترافي",duration:"150-180 دقيقة",
+goal:"تنفيذ مشروع دبلجة كامل من الصفر إلى الفيديو النهائي.",
+sections:[
+{id:"d10s1",title:"المرحلة 1 — اختيار المشروع",time:"15 دقيقة",
+steps:["اختر مشهدًا مدته 60-120 ثانية.","الأفضل أن يكون فيه شخصية أو شخصيتان في البداية.","لا تختار أصعب مشهد لديك."]},
+{id:"d10s2",title:"المرحلة 2 — التحليل",time:"20 دقيقة",
+steps:["شاهد المشهد 5 مرات.","اكتب لكل شخصية: العمر التقريبي، الحالة النفسية، هدفها في المشهد، سرعة الكلام، طبقة الصوت، أماكن التنفس، أماكن الانفعال."]},
+{id:"d10s3",title:"المرحلة 3 — النص",time:"20 دقيقة",
+steps:["اكتب كل جملة في سطر مستقل.","ضع علامات البداية والنهاية.","إذا كنت تكتب ترجمة عربية، اجعل الجملة طبيعية في النطق."]},
+{id:"d10s4",title:"المرحلة 4 — الإحماء",time:"10 دقائق",
+steps:["نفذ تمارين التنفس والنطق من اليوم الأول.","لا تبدأ التسجيل وصوتك بارد."]},
+{id:"d10s5",title:"المرحلة 5 — التسجيل",time:"30-40 دقيقة",
+steps:["سجل كل شخصية منفصلة.","لكل جملة: Take 1 طبيعي، Take 2 أكثر إحساسًا، Take 3 أكثر دقة في التوقيت.","بعدها اختر الأفضل."]},
+{id:"d10s6",title:"المرحلة 6 — المزامنة",time:"20-30 دقيقة",
+steps:["ضع الحوار على الفيديو.","راجع بداية كل جملة ونهايتها.","راجع السرعة.","راجع الوقفات.","شاهد المشهد عدة مرات."]},
+{id:"d10s7",title:"المرحلة 7 — تنظيف الصوت",time:"15-20 دقيقة",
+steps:["طبّق معالجة خفيفة حسب الحاجة: تقليل ضوضاء ثم EQ ثم Compression ثم De-esser.","لا تستخدم كل أداة لمجرد استخدامها."]},
+{id:"d10s8",title:"المرحلة 8 — المكساج",time:"15-20 دقيقة",
+steps:["أضف الموسيقى والمؤثرات.","الحوار هو العنصر الذي يجب أن يبقى مفهومًا.","اضبط المستويات حتى لا تطغى الموسيقى."]},
+{id:"d10s9",title:"المرحلة 9 — المراجعة واختبار التخرج",time:"15 دقيقة",
+steps:["شاهد الفيديو مرة كاملة دون إيقاف.","ثم شاهده مرة ثانية مع التركيز على الصوت فقط.","اكتب: 3 أشياء ممتازة، 3 أخطاء واضحة، 3 أشياء ستفعلها بشكل مختلف في المشروع القادم.","قيّم من 10: وضوح النطق / التحكم بالنفس / التمثيل / المشاعر / ثبات الشخصية / المزامنة / جودة التسجيل / تنظيف الصوت / المكساج / الطبيعية.","المعيار الأهم: لا تسأل «هل صوتي جميل؟» بل اسأل «هل أصدق أن هذه الشخصية تتكلم؟»","بعد اليوم العاشر: كرر المشروع كل أسبوع، وفي كل أسبوع زد صعوبة واحدة فقط."]}]}
+];
+
+var DEF={welcomed:false,userName:"",startDate:null,completedDays:{},tasks:{},ratings:{},lastDay:1,certNo:"",avatar:""};
+var state=JSON.parse(JSON.stringify(DEF));
+
+function loadS(){
+  try{
+    var r=localStorage.getItem(CONFIG.storageKey);
+    if(r){
+      state=Object.assign({},DEF,JSON.parse(r));
+      Object.keys(state.completedDays).forEach(function(k){
+        if(state.completedDays[k]===true) state.completedDays[k]=Date.now()-UNLOCK_MS-1000;
+      });
+    }
+  }catch(e){}
+}
+function saveS(){try{localStorage.setItem(CONFIG.storageKey,JSON.stringify(state));}catch(e){}}
+
+function dayDoneTime(n){var v=state.completedDays[n];if(!v)return 0;if(v===true)return Date.now()-UNLOCK_MS-1000;return +v;}
+function isUnlocked(n){n=+n;if(n===1)return true;var p=dayDoneTime(n-1);if(!p)return false;return (Date.now()-p)>=UNLOCK_MS;}
+function unlockRemaining(n){n=+n;if(n===1)return 0;var p=dayDoneTime(n-1);if(!p)return -1;var r=UNLOCK_MS-(Date.now()-p);return r>0?r:0;}
+function fmtRemain(ms){var s=Math.floor(ms/1000);var h=Math.floor(s/3600);var m=Math.floor((s%3600)/60);var ss=s%60;return String(h).padStart(2,"0")+":"+String(m).padStart(2,"0")+":"+String(ss).padStart(2,"0");}
+
+var db=null;
+function openDB(){return new Promise(function(res){if(!("indexedDB" in window))return res(null);try{var q=indexedDB.open(CONFIG.dbName,1);q.onupgradeneeded=function(e){var d=e.target.result;if(!d.objectStoreNames.contains("recordings")){var s=d.createObjectStore("recordings",{keyPath:"id",autoIncrement:true});s.createIndex("day","day",{unique:false});}};q.onsuccess=function(e){db=e.target.result;res(db);};q.onerror=function(){res(null);};setTimeout(function(){if(!db)res(null);},1500);}catch(e){res(null);}});}
+function saveRec(day,blob,dur,label){return new Promise(function(res,rej){if(!db)return rej(new Error("no db"));try{var tx=db.transaction("recordings","readwrite");var r=tx.objectStore("recordings").add({day:+day,blob:blob,duration:dur,label:label,date:Date.now()});r.onsuccess=function(){res(r.result);};r.onerror=function(e){rej(e);};}catch(e){rej(e);}});}
+function getRecs(day){return new Promise(function(res){if(!db)return res([]);try{var r=db.transaction("recordings","readonly").objectStore("recordings").index("day").getAll(+day);r.onsuccess=function(){res(r.result||[]);};r.onerror=function(){res([]);};}catch(e){res([]);}});}
+function getAllRecs(){return new Promise(function(res){if(!db)return res([]);try{var r=db.transaction("recordings","readonly").objectStore("recordings").getAll();r.onsuccess=function(){res(r.result||[]);};r.onerror=function(){res([]);};}catch(e){res([]);}});}
+function delRec(id){return new Promise(function(res){if(!db)return res();try{db.transaction("recordings","readwrite").objectStore("recordings").delete(id);}catch(e){}res();});}
+
+function ft(sec){sec=Math.max(0,Math.floor(sec));return String(Math.floor(sec/60)).padStart(2,"0")+":"+String(sec%60).padStart(2,"0");}
+function fd(ts){if(!ts)return "—";try{return new Date(ts).toLocaleDateString("ar-EG",{year:"numeric",month:"long",day:"numeric"});}catch(e){return new Date(ts).toLocaleDateString();}}
+function fdShort(ts){if(!ts)return "—";try{var d=new Date(ts);return String(d.getDate()).padStart(2,"0")+" / "+String(d.getMonth()+1).padStart(2,"0")+" / "+d.getFullYear();}catch(e){return "—";}}
+function to(m){var t=document.getElementById("to");t.textContent=m;t.classList.add("show");clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove("show");},2400);}
+function dd(n){return COURSE.find(function(d){return d.day===+n;});}
+function dp(n){var d=dd(n);if(!d)return 0;if(state.completedDays[n])return 100;var dn=d.sections.filter(function(s){return state.tasks[s.id];}).length;return Math.round((dn/d.sections.length)*100);}
+function op(){var s=0;for(var i=1;i<=10;i++)s+=dp(i);return Math.round(s/10);}
+function cdc(){return Object.keys(state.completedDays).filter(function(k){return state.completedDays[k];}).length;}
+function ctc(){return Object.keys(state.tasks).filter(function(k){return state.tasks[k];}).length;}
+function ttc(){var s=0;COURSE.forEach(function(d){s+=d.sections.length;});return s;}
+function cday(){for(var i=1;i<=10;i++){if(!state.completedDays[i]&&isUnlocked(i))return i;}for(var j=1;j<=10;j++){if(!state.completedDays[j])return j;}return 10;}
+function done(){return cdc()>=10;}
+
+function computeRank(){
+  var days=cdc();
+  var ratings=Object.values(state.ratings||{}).filter(function(v){return v>0;});
+  var avgR=ratings.length?ratings.reduce(function(a,b){return a+b;},0)/ratings.length:0;
+  var score=days*9+avgR*1.5;
+  if(score>=92) return {icon:"👑",title:"أسطوري",color:"#fbbf24",desc:"وصلت لمستوى نادر! صوتك أصبح أداة احترافية حقيقية."};
+  if(score>=78) return {icon:"🏆",title:"محترف",color:"#f4d47c",desc:"مستوى احترافي رائع! أنت جاهز لدبلجة مشاريع حقيقية."};
+  if(score>=60) return {icon:"🥇",title:"عادي",color:"#f97316",desc:"أداء جيد جدًا! استمر في التطور وستصل للاحتراف."};
+  if(score>=40) return {icon:"🥈",title:"متوسط",color:"#ef4444",desc:"أنت في الطريق الصحيح، تحتاج مزيدًا من التدريب."};
+  return {icon:"🥉",title:"مبتدئ",color:"#c4a89c",desc:"بداية الرحلة! كل محترف كان مبتدئًا — استمر."};
+}
+function renderRank(){
+  var rank=computeRank();
+  var html=
+    '<div style="font-size:56px;line-height:1;margin-bottom:8px;filter:drop-shadow(0 6px 20px '+rank.color+'88)">'+rank.icon+'</div>'+
+    '<div style="font-size:26px;font-weight:800;color:'+rank.color+';letter-spacing:1px;margin-bottom:8px;text-shadow:0 0 25px '+rank.color+'aa">'+rank.title+'</div>'+
+    '<div style="font-size:13px;color:#c9b585;line-height:1.8;padding:0 8px">'+rank.desc+'</div>';
+  var el=document.getElementById("rankBox");
+  if(el) el.innerHTML=html;
+  var el2=document.getElementById("rankBox2");
+  if(el2) el2.innerHTML=html;
+}
+
+function uploadAvatar(e){
+  var file=e.target.files[0];
+  if(!file)return;
+  if(file.size > 5*1024*1024){to("⚠️ الصورة كبيرة جدًا، اختر صورة أقل من 5 ميجا");return;}
+  if(file.type.indexOf("image/")!==0){to("⚠️ اختر صورة صحيحة");return;}
+  var reader=new FileReader();
+  reader.onload=function(ev){
+    var img=new Image();
+    img.onload=function(){
+      var max=300;
+      var w=img.width,h=img.height;
+      if(w>h && w>max){h=Math.round(h*(max/w));w=max;}
+      else if(h>w && h>max){w=Math.round(w*(max/h));h=max;}
+      var c=document.createElement("canvas");
+      c.width=w;c.height=h;
+      c.getContext("2d").drawImage(img,0,0,w,h);
+      var data=c.toDataURL("image/jpeg",0.82);
+      state.avatar=data;
+      saveS();
+      renderAvatar();
+      to("✅ تم حفظ صورة البروفايل");
+    };
+    img.src=ev.target.result;
+  };
+  reader.readAsDataURL(file);
+  e.target.value="";
+}
+
+function renderAvatar(){
+  var el=document.getElementById("profileAvatar");
+  if(!el)return;
+  if(state.avatar){
+    el.innerHTML='<img src="'+state.avatar+'" alt="avatar">';
+  }else{
+    el.innerHTML="👤";
+  }
+}
+
+var currentEvalMsg="";
+
+/* ============ تحويل التسجيل إلى WAV (مدعوم من واتساب) ============ */
+function encodeWav(samples,sampleRate){
+  var buffer=new ArrayBuffer(44+samples.length*2);
+  var view=new DataView(buffer);
+  function ws(off,str){for(var i=0;i<str.length;i++)view.setUint8(off+i,str.charCodeAt(i));}
+  ws(0,'RIFF');view.setUint32(4,36+samples.length*2,true);
+  ws(8,'WAVE');ws(12,'fmt ');
+  view.setUint32(16,16,true);
+  view.setUint16(20,1,true);
+  view.setUint16(22,1,true);
+  view.setUint32(24,sampleRate,true);
+  view.setUint32(28,sampleRate*2,true);
+  view.setUint16(32,2,true);
+  view.setUint16(34,16,true);
+  ws(36,'data');view.setUint32(40,samples.length*2,true);
+  var off=44;
+  for(var i=0;i<samples.length;i++){
+    var s=Math.max(-1,Math.min(1,samples[i]));
+    view.setInt16(off,s<0?s*0x8000:s*0x7FFF,true);
+    off+=2;
+  }
+  return new Blob([view],{type:'audio/wav'});
+}
+
+function convertToWav(blob,targetRate){
+  targetRate=targetRate||22050;
+  return new Promise(function(resolve,reject){
+    if(blob.type && blob.type.indexOf('wav')>-1){resolve(blob);return;}
+    var AC=window.AudioContext||window.webkitAudioContext;
+    if(!AC){reject(new Error('no audio context'));return;}
+    blob.arrayBuffer().then(function(buf){
+      var ctx=new AC();
+      ctx.decodeAudioData(buf,function(audioBuf){
+        try{
+          var srcRate=audioBuf.sampleRate;
+          var targetLen=Math.ceil(audioBuf.length*targetRate/srcRate);
+          var offline=new OfflineAudioContext(1,targetLen,targetRate);
+          var src=offline.createBufferSource();
+          src.buffer=audioBuf;
+          src.connect(offline.destination);
+          src.start();
+          offline.startRendering().then(function(rendered){
+            var samples=rendered.getChannelData(0);
+            var wav=encodeWav(samples,targetRate);
+            try{ctx.close();}catch(e){}
+            resolve(wav);
+          }).catch(function(e){try{ctx.close();}catch(_){} reject(e);});
+        }catch(e){
+          try{ctx.close();}catch(_){}
+          reject(e);
+        }
+      },function(err){
+        try{ctx.close();}catch(_){}
+        reject(err);
+      });
+    }).catch(reject);
+  });
+}
+
+/* ============ الإرسال للتقييم على واتساب ============ */
+function sendDayForEval(dayNum, silent){
+  var d=dd(dayNum);
+  if(!d)return;
+  getRecs(dayNum).then(function(recs){
+    if(!recs.length){
+      if(!silent) to("⚠️ لا توجد تسجيلات لهذا اليوم — سجّل أولًا");
+      return;
+    }
+    to("⏳ جارٍ تجهيز الملفات...");
+
+    Promise.all(recs.map(function(r){
+      return convertToWav(r.blob,22050).then(function(wav){
+        return {blob:wav,duration:r.duration};
+      }).catch(function(){
+        return {blob:r.blob,duration:r.duration};
+      });
+    })).then(function(converted){
+      var totalDur=converted.reduce(function(a,r){return a+(r.duration||0);},0);
+
+      var msg =
+        "🎙️ طلب تقييم تسجيلات صوتية\n\n"+
+        "الاسم: "+(state.userName||"متدرب")+"\n"+
+        "اليوم: "+dayNum+" - "+d.title+"\n"+
+        "عدد التسجيلات: "+converted.length+"\n"+
+        "المدة الإجمالية: "+ft(totalDur)+"\n\n"+
+        "أرجو تقييم الأداء وإعطائي ملاحظات للتطوير.\n\n"+
+        "— DUBAJ PRO 🎙️";
+      currentEvalMsg = msg;
+
+      var files = converted.map(function(r,i){
+        var nm = "DUBAJ-Day"+dayNum+"-Rec"+(i+1)+".wav";
+        try{ return new File([r.blob], nm, {type:'audio/wav'}); }
+        catch(e){ try{ r.blob.name = nm; }catch(_){}; return r.blob; }
+      });
+
+      var recsForModal = converted.map(function(r,i){
+        return {blob:r.blob,duration:r.duration,label:"التسجيل "+(i+1)};
+      });
+
+      if(navigator.canShare && navigator.share){
+        try{
+          if(navigator.canShare({files:files})){
+            navigator.share({
+              text: msg,
+              title: "تسجيلاتي من DUBAJ PRO - اليوم "+dayNum,
+              files: files
+            }).then(function(){
+              to("✅ اختر واتساب من القائمة");
+            }).catch(function(err){
+              if(err && err.name!=="AbortError"){
+                showEvalModal(dayNum,recsForModal,msg);
+              }
+            });
+            return;
+          }
+        }catch(e){ console.log(e); }
+      }
+
+      showEvalModal(dayNum,recsForModal,msg);
+    });
+  });
+}
+
+function showEvalModal(dayNum,recs,msg){
+  var m=document.getElementById("evalModal");
+  m.classList.remove("hide");
+  document.getElementById("evalTitle").textContent="📤 أرسل تسجيلات اليوم "+dayNum+" للتقييم";
+  document.getElementById("evalDesc").innerHTML =
+    "📱 على الهاتف: سيُفتح خيار المشاركة مباشرة واختر <b>واتساب</b>.<br>"+
+    "💻 على الكمبيوتر: نزّل الملفات ثم اضغط <b>فتح واتساب</b> وأرفقها.";
+  document.getElementById("evalMsg").textContent = msg;
+  document.body.style.overflow = "hidden";
+
+  var host=document.getElementById("evalRecs");
+  host.innerHTML = recs.map(function(r,i){
+    var url=URL.createObjectURL(r.blob);
+    var nm="DUBAJ-Day"+dayNum+"-Rec"+(i+1)+".wav";
+    return '<div class="ri">'+
+      '<div class="rih"><span class="rn">🎙️ التسجيل '+(i+1)+' <span style="color:#7ef0a8;font-size:10px">(WAV ✓)</span></span>'+
+      '<span class="rdt">'+ft(r.duration||0)+'</span></div>'+
+      '<audio controls src="'+url+'"></audio>'+
+      '<a class="btn bg bsm" style="margin-top:8px;display:inline-flex;text-decoration:none;color:#fff" '+
+      'href="'+url+'" download="'+nm+'">⬇️ تحميل ملف WAV</a>'+
+      '</div>';
+  }).join("");
+}
+
+function closeEvalModal(){
+  document.getElementById("evalModal").classList.add("hide");
+  document.body.style.overflow="";
+}
+
+function copyEvalMsg(){
+  if(!currentEvalMsg)return;
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(currentEvalMsg).then(function(){to("📋 تم نسخ الرسالة");}).catch(fbCopy);
+  }else{
+    fbCopy();
+  }
+  function fbCopy(){
+    var ta=document.createElement("textarea");
+    ta.value=currentEvalMsg;
+    ta.style.position="fixed";ta.style.opacity="0";
+    document.body.appendChild(ta);
+    ta.select();
+    try{document.execCommand("copy");to("📋 تم نسخ الرسالة");}catch(e){to("⚠️ تعذر النسخ");}
+    document.body.removeChild(ta);
+  }
+}
+
+function openWhatsAppEval(){
+  if(!currentEvalMsg){to("⚠️ لا توجد رسالة");return;}
+  var phone=CONFIG.whatsappNumber||"";
+  var url=phone
+    ? "https://wa.me/"+phone+"?text="+encodeURIComponent(currentEvalMsg)
+    : "https://wa.me/?text="+encodeURIComponent(currentEvalMsg);
+  window.open(url,"_blank","noopener");
+  to("📤 جارٍ فتح واتساب");
+}
+
+function sv(name){
+  document.querySelectorAll(".view").forEach(function(v){v.classList.add("hide");});
+  var el=document.getElementById("v-"+name);
+  if(el) el.classList.remove("hide");
+  document.querySelectorAll(".nb").forEach(function(b){b.classList.toggle("on",b.dataset.nav===name);});
+  window.scrollTo(0,0);
+  try{
+    if(name==="home") rHome();
+    if(name==="course") rCourse();
+    if(name==="progress") rProg();
+    if(name==="profile") rProf();
+    if(name==="record") initRec();
+    if(name==="finish") rFinish();
+    if(name==="cert") rCert();
+  }catch(e){console.warn(e);}
+}
+
+function rHome(){
+  var p=op(),cd=cday(),d=dd(cd)||COURSE[0];
+  document.getElementById("hp").textContent=p+"%";
+  document.getElementById("hb").style.width=p+"%";
+  document.getElementById("hdl").textContent="اليوم "+cd+" من 10";
+  document.getElementById("htl").textContent=ctc()+" / "+ttc()+" مهمة";
+  document.getElementById("hg").textContent=state.userName?("أهلاً "+state.userName+" 👋"):"أهلاً بك 👋";
+  document.getElementById("hs").textContent=done()?"🎉 لقد أكملت الكورس!":"لنبدأ رحلتك في عالم الدبلجة";
+  document.getElementById("htn").textContent="اليوم "+cd;
+  document.getElementById("htt").textContent=d.title;
+  document.getElementById("htg").textContent=d.goal;
+  var l=state.lastDay||1,ld=dd(l)||COURSE[0];
+  document.getElementById("hls").textContent="آخر تدريب: اليوم "+l+" - "+ld.title+" ("+dp(l)+"%)";
+}
+function cont(){if(done()){sv("finish");return;}openDay(cday());}
+
+function rCourse(){
+  var l=document.getElementById("cl");
+  var cd=cday();
+  l.innerHTML=COURSE.map(function(d){
+    var pr=dp(d.day);
+    var dn=!!state.completedDays[d.day];
+    var unlocked=isUnlocked(d.day);
+    var cur=(d.day===cd)&&!dn&&unlocked;
+    var locked=!dn&&!unlocked;
+    var cls="dc";
+    if(dn) cls+=" done";
+    if(cur) cls+=" cur";
+    if(locked) cls+=" locked";
+    var lockMsg="";
+    if(locked){
+      var rem=unlockRemaining(d.day);
+      if(rem===-1) lockMsg='<div class="lockmsg">🔒 أكمل اليوم السابق أولًا</div>';
+      else lockMsg='<div class="lockmsg">🔒 يُفتح بعد: <span class="countdown" data-unlock="'+d.day+'">'+fmtRemain(rem)+'</span></div>';
+    }
+    var click=locked?'':'onclick="openDay('+d.day+')"';
+    var icon=dn?'✓':(locked?'🔒':('اليوم<br>'+d.day));
+    return '<div class="'+cls+'" '+click+'>'+
+      '<div class="dn">'+icon+'</div>'+
+      '<div class="di"><h4>'+d.title+'</h4><div class="sub">'+d.duration+' • '+pr+'%</div>'+
+      '<div class="bar" style="height:8px;margin:6px 0 0"><span style="width:'+pr+'%"></span></div>'+
+      lockMsg+'</div>'+
+      '<div style="color:var(--mu);font-size:18px">'+(locked?'':'‹')+'</div></div>';
+  }).join("");
+  var p=op();
+  document.getElementById("cb").style.width=p+"%";
+  document.getElementById("cp").textContent=p+"% مكتمل";
+}
+
+var cdTimer=null;
+function startCountdowns(){
+  if(cdTimer) clearInterval(cdTimer);
+  cdTimer=setInterval(function(){
+    var els=document.querySelectorAll("[data-unlock]");
+    if(!els.length){clearInterval(cdTimer);cdTimer=null;return;}
+    var anyUnlocked=false;
+    els.forEach(function(el){
+      var n=+el.getAttribute("data-unlock");
+      var rem=unlockRemaining(n);
+      if(rem<=0){anyUnlocked=true;el.textContent="00:00:00";}
+      else{el.textContent=fmtRemain(rem);}
+    });
+    if(anyUnlocked){
+      var cv=document.getElementById("v-course");
+      if(cv && !cv.classList.contains("hide")) rCourse();
+    }
+  },1000);
+}
+
+var curDay=1;
+function openDay(n){
+  n=+n;
+  if(!isUnlocked(n)){
+    curDay=n;rDayLocked(n);sv("day");
+    document.querySelectorAll(".nb").forEach(function(b){b.classList.remove("on");});
+    var cb=document.querySelector('.nb[data-nav="course"]');
+    if(cb) cb.classList.add("on");
+    return;
+  }
+  curDay=n;state.lastDay=curDay;saveS();
+  rDay(curDay);sv("day");
+  document.querySelectorAll(".nb").forEach(function(b){b.classList.remove("on");});
+  var cb=document.querySelector('.nb[data-nav="course"]');
+  if(cb) cb.classList.add("on");
+}
+
+function rDayLocked(n){
+  var d=dd(n);
+  var host=document.getElementById("v-day");
+  var rem=unlockRemaining(n);
+  var msg=(rem===-1)?'أكمل اليوم السابق أولًا لفتح هذا اليوم.' : 'هذا اليوم مقفل. سيُفتح تلقائيًا بعد انتهاء الوقت.';
+  host.innerHTML='<button class="bb" onclick="sv(\'course\')">→ رجوع إلى الأيام</button>'+
+    '<div class="lockbig"><span class="ic">🔒</span><h2>اليوم '+d.day+' مقفل</h2><p class="mu sm">'+msg+'</p>'+
+    (rem>0?'<div class="cdown" id="dayCountdown">'+fmtRemain(rem)+'</div>':'')+
+    (rem>0?'<p class="mu sm">الوقت المتبقي لفتح اليوم</p>':'')+
+    '</div><div class="card"><h3>'+d.title+'</h3><p class="mu sm">'+d.goal+'</p></div>'+
+    '<button class="btn bp" onclick="sv(\'course\')">📚 العودة إلى الأيام</button>';
+  if(rem>0){
+    var iv=setInterval(function(){
+      var e=document.getElementById("dayCountdown");
+      if(!e){clearInterval(iv);return;}
+      var r2=unlockRemaining(n);
+      if(r2<=0){clearInterval(iv);openDay(n);return;}
+      e.textContent=fmtRemain(r2);
+    },1000);
+  }
+}
+
+function rDay(n){
+  var d=dd(n);if(!d)return;
+  var host=document.getElementById("v-day");
+  var dn=!!state.completedDays[n],pr=dp(n);
+  var secs=d.sections.map(function(s){
+    var sd=!!state.tasks[s.id];
+    var st=s.steps?'<ol class="steps">'+s.steps.map(function(t){return '<li>'+t+'</li>';}).join("")+'</ol>':"";
+    var tx=s.texts?s.texts.map(function(t){
+      return '<div class="rb"><div class="rl">📖 '+t.title+' - اقرأه بصوت عالٍ</div><p class="rbd">'+String(t.body).replace(/\n/g,"<br>")+'</p></div>';
+    }).join(""):"";
+    return '<div class="card sc '+(sd?'done':'')+'">'+
+      '<div class="sh"><div style="flex:1"><div class="st">'+s.title+'</div>'+(s.time?'<div class="stm">⏱️ '+s.time+'</div>':'')+'</div>'+
+      '<button class="ck '+(sd?'on':'')+'" onclick="tgl(\''+s.id+'\')">'+(sd?'✓':'')+'</button></div>'+
+      st+tx+
+      '<button class="btn bg bsm" style="margin-top:10px" onclick="tgl(\''+s.id+'\')">'+(sd?'↩️ إلغاء الإنجاز':'✅ أنجزت هذا التمرين')+'</button></div>';
+  }).join("");
+  var nextUnlockMsg="";
+  if(dn && n<10){
+    nextUnlockMsg='<div class="card" style="border-color:rgba(249,115,22,.5);background:linear-gradient(180deg,rgba(249,115,22,.1),transparent)">'+
+      '<h3>🔓 اليوم التالي</h3>'+
+      '<p class="mu sm" style="margin-bottom:8px">اليوم '+(n+1)+' سيُفتح بعد 24 ساعة من إكمال هذا اليوم.</p>'+
+      '<div style="font-size:24px;font-weight:800;font-variant-numeric:tabular-nums;text-align:center;background:linear-gradient(135deg,#fff,#fbbf24,#f97316);-webkit-background-clip:text;background-clip:text;color:transparent" id="nextUnlockCountdown">--:--:--</div>'+
+      '</div>';
+  }
+  host.innerHTML='<button class="bb" onclick="sv(\'course\')">→ رجوع إلى الأيام</button>'+
+    '<div class="dh"><span class="tg">اليوم '+d.day+' من 10</span><h1>'+d.title+'</h1>'+
+    '<div class="mt">⏱️ مدة التدريب: '+d.duration+'</div>'+
+    '<div class="bar" style="margin-top:14px"><span style="width:'+pr+'%"></span></div>'+
+    '<div class="ph"><span>تقدم اليوم</span><b>'+pr+'%</b></div></div>'+
+    '<div class="card"><h3>🎯 هدف التدريب</h3><p class="mu" style="font-size:14px">'+d.goal+'</p></div>'+
+    '<h3 style="margin:18px 4px 12px;font-size:16px">🎙️ التدريب العملي</h3>'+
+    secs+
+    '<div class="card"><h3>🎙️ سجل تدريبك الصوتي</h3><p class="mu sm" style="margin-bottom:12px">سجل صوتك أثناء تنفيذ تمارين اليوم.</p><div id="drh"></div></div>'+
+    '<div class="card"><h3>📁 تسجيلات اليوم '+d.day+'</h3><div id="drl"></div></div>'+
+    '<div class="card"><h3>📝 قيّم أداءك اليوم</h3><p class="mu sm">من 1 (ضعيف) إلى 10 (ممتاز)</p>'+
+    '<div class="rr">'+Array.from({length:10},function(_,i){var v=i+1,on=state.ratings[d.day]===v?"on":"";return '<button class="rbt '+on+'" onclick="setRt('+d.day+','+v+')">'+v+'</button>';}).join("")+'</div></div>'+
+    '<button class="btn bp" style="margin-bottom:10px" onclick="doneDay('+d.day+')">'+
+      (dn?'✅ اليوم مكتمل - إعادة التأكيد':'✅ أكملت المهمة')+
+    '</button>'+
+    '<button class="btn bg" style="margin-bottom:10px;border-color:rgba(34,197,94,.55);color:#7ef0a8" '+
+    'onclick="sendDayForEval('+d.day+')">📤 أرسل تسجيلات اليوم '+d.day+' للتقييم على واتساب</button>'+
+    (dn?'<button class="btn bg" onclick="nextDay('+d.day+')">➡️ الانتقال إلى اليوم التالي</button>':"")+
+    nextUnlockMsg+
+    '<div class="ftr"><div class="ln"></div><p>© 2026 <b class="an">DUBAJ PRO</b></p><div style="margin-top:10px"><a id="dtt" class="tt" target="_blank" rel="noopener">TikTok</a></div></div>';
+  applyLinks();
+  buildRec(document.getElementById("drh"),function(){return curDay;});
+  rDayRecs();
+  if(dn && n<10){
+    var iv=setInterval(function(){
+      var el=document.getElementById("nextUnlockCountdown");
+      if(!el){clearInterval(iv);return;}
+      var r=unlockRemaining(n+1);
+      if(r<=0){clearInterval(iv);el.textContent="متاح الآن ✓";return;}
+      el.textContent=fmtRemain(r);
+    },1000);
+  }
+}
+
+function tgl(id){
+  state.tasks[id]=!state.tasks[id];
+  saveS();
+  rDay(curDay);rHome();rCourse();
+  var d=dd(curDay);
+  if(d && !state.completedDays[curDay]){
+    var allDone = d.sections.every(function(s){ return state.tasks[s.id]; });
+    if(allDone){
+      to("🎯 أكملت كل التمارين! اضغط ✅ أكملت المهمة");
+    }
+  }
+}
+
+function setRt(day,v){if(state.ratings[day]===v)delete state.ratings[day];else state.ratings[day]=v;saveS();rDay(curDay);}
+
+function doneDay(n){
+  var firstTime = !state.completedDays[n];
+  if(firstTime) state.completedDays[n]=Date.now();
+  dd(n).sections.forEach(function(s){state.tasks[s.id]=true;});
+  saveS();
+  rDay(n);rHome();rCourse();rProg();rProf();
+  to("🎉 أحسنت! تم إكمال اليوم "+n);
+
+  if(firstTime){
+    setTimeout(function(){
+      getRecs(n).then(function(recs){
+        if(recs.length>0){
+          sendDayForEval(n);
+        }else{
+          to("📌 سجّل صوتك ثم اضغط زر 📤 للتقييم");
+        }
+      });
+    }, 1200);
+  }
+
+  if(done()) setTimeout(function(){sv("finish");},3500);
+}
+
+function nextDay(n){if(n>=10){sv("finish");return;}var nxt=n+1;if(!isUnlocked(nxt)){to("⏳ اليوم التالي يُفتح بعد 24 ساعة");openDay(nxt);}else{openDay(nxt);}}
+
+/* ======== التسجيل الصوتي ======== */
+function getMime(){
+  if(typeof window.MediaRecorder==="undefined")return "";
+  var t=[
+    "audio/ogg;codecs=opus",
+    "audio/mp4;codecs=mp4a.40.2",
+    "audio/mp4",
+    "audio/webm;codecs=opus",
+    "audio/webm"
+  ];
+  for(var i=0;i<t.length;i++){
+    try{if(MediaRecorder.isTypeSupported(t[i]))return t[i];}catch(e){}
+  }
+  return "";
+}
+
+function micSupported(){
+  if(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia)return true;
+  return !!(navigator.getUserMedia||navigator.webkitGetUserMedia||navigator.mozGetUserMedia);
+}
+
+function getMicStream(){
+  return new Promise(function(resolve,reject){
+    if(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia){
+      navigator.mediaDevices.getUserMedia({audio:true}).then(resolve,reject);
+      return;
+    }
+    var legacy=navigator.getUserMedia||navigator.webkitGetUserMedia||navigator.mozGetUserMedia;
+    if(legacy){legacy.call(navigator,{audio:true},resolve,reject);return;}
+    var e=new Error("unsupported");e.name="NotSupportedError";reject(e);
+  });
+}
+
+function micErrorText(err){
+  var n=(err&&err.name)||"";
+  if(n==="NotAllowedError"||n==="PermissionDeniedError"||n==="SecurityError")
+    return "⚠️ تم رفض إذن الميكروفون. اضغط على أيقونة القفل بجانب العنوان ← الأذونات ← اسمح بالميكروفون ثم أعد المحاولة.";
+  if(n==="NotFoundError"||n==="DevicesNotFoundError"||n==="OverconstrainedError")
+    return "⚠️ لم يتم العثور على ميكروفون في جهازك.";
+  if(n==="NotReadableError"||n==="TrackStartError"||n==="AbortError")
+    return "⚠️ الميكروفون مشغول بتطبيق آخر. أغلق التطبيقات الأخرى ثم أعد المحاولة.";
+  if(n==="NotSupportedError"||n==="TypeError")
+    return "⚠️ المتصفح لا يدعم الميكروفون هنا. افتح الصفحة عبر HTTPS في Chrome أو Safari، أو استخدم زر رفع ملف صوتي بالأسفل.";
+  return "⚠️ تعذر تشغيل الميكروفون: "+((err&&err.message)||"خطأ غير معروف");
+}
+
+function buildRec(host,dayFn){
+  if(!host)return;
+  host.innerHTML=
+    '<div class="rc">'+
+      '<div class="rt" data-t>00:00</div>'+
+      '<div class="rs" data-s>جاهز للتسجيل</div>'+
+      '<div class="rctl">'+
+        '<button class="btn bbr" data-start type="button">🔴 بدء التسجيل</button>'+
+        '<button class="btn bg hide" data-stop type="button">⏹️ إيقاف</button>'+
+      '</div>'+
+      '<div class="hide" data-prev>'+
+        '<audio controls data-audio></audio>'+
+        '<div class="brw" style="margin-top:12px">'+
+          '<button class="btn bp" data-save type="button">💾 حفظ</button>'+
+          '<button class="btn bg" data-redo type="button">🔄 إعادة</button>'+
+        '</div>'+
+      '</div>'+
+      '<p class="sm" data-err style="margin-top:12px;color:#fca5a5;line-height:1.9;min-height:16px"></p>'+
+      '<div data-fb class="hide" style="margin-top:12px">'+
+        '<label class="btn bg" style="cursor:pointer;margin:0">📁 ارفع ملفًا صوتيًا من جهازك<input type="file" accept="audio/*" data-file style="display:none"></label>'+
+      '</div>'+
+    '</div>';
+
+  var tEl=host.querySelector("[data-t]"),sEl=host.querySelector("[data-s]");
+  var bStart=host.querySelector("[data-start]"),bStop=host.querySelector("[data-stop]");
+  var prev=host.querySelector("[data-prev]"),aEl=host.querySelector("[data-audio]");
+  var bSave=host.querySelector("[data-save]"),bRedo=host.querySelector("[data-redo]");
+  var errEl=host.querySelector("[data-err]");
+  var fbBox=host.querySelector("[data-fb]"),fileEl=host.querySelector("[data-file]");
+
+  var mr=null,ch=[],st=null,tm=null,sec=0,lastDur=0,bl=null,cnt=0,prevUrl=null;
+
+  function rsT(){clearInterval(tm);tm=null;sec=0;tEl.textContent="00:00";}
+  function stS(){if(st){try{st.getTracks().forEach(function(t){t.stop();});}catch(e){}st=null;}}
+  function clearPrev(){
+    if(prevUrl){URL.revokeObjectURL(prevUrl);prevUrl=null;}
+    bl=null;aEl.removeAttribute("src");prev.classList.add("hide");
+    sEl.textContent="جاهز للتسجيل";tEl.textContent="00:00";lastDur=0;
+  }
+
+  bStart.addEventListener("click",function(){
+    errEl.textContent="";
+    fbBox.classList.add("hide");
+
+    if(!micSupported()){
+      errEl.textContent="⚠️ متصفحك لا يدعم التسجيل المباشر. استخدم زر رفع ملف صوتي بالأسفل.";
+      fbBox.classList.remove("hide");
+      return;
+    }
+    if(typeof window.MediaRecorder==="undefined"){
+      errEl.textContent="⚠️ متصفحك لا يدعم حفظ التسجيل (MediaRecorder). استخدم زر رفع ملف صوتي بالأسفل.";
+      fbBox.classList.remove("hide");
+      return;
+    }
+
+    sEl.textContent="⏳ جارٍ طلب إذن الميكروفون...";
+
+    getMicStream().then(function(s){
+      st=s;ch=[];bl=null;
+
+      var m=getMime();
+      try{mr=m?new MediaRecorder(s,{mimeType:m}):new MediaRecorder(s);}
+      catch(e1){
+        try{mr=new MediaRecorder(s);}
+        catch(e2){
+          errEl.textContent="⚠️ تعذر بدء التسجيل: "+e2.message;
+          fbBox.classList.remove("hide");
+          stS();sEl.textContent="جاهز للتسجيل";return;
+        }
+      }
+
+      mr.ondataavailable=function(e){if(e.data&&e.data.size>0)ch.push(e.data);};
+      mr.onerror=function(e){errEl.textContent="⚠️ حدث خطأ أثناء التسجيل.";console.warn(e);};
+      mr.onstop=function(){
+        stS();
+        if(!ch.length){
+          errEl.textContent="⚠️ لم يتم تسجيل أي صوت. تحقق من الميكروفون ثم حاول مجددًا.";
+          sEl.textContent="جاهز للتسجيل";tEl.textContent="00:00";return;
+        }
+        var tp=(ch[0]&&ch[0].type)||"audio/webm";
+        bl=new Blob(ch,{type:tp});
+        if(prevUrl)URL.revokeObjectURL(prevUrl);
+        prevUrl=URL.createObjectURL(bl);
+        aEl.src=prevUrl;
+        prev.classList.remove("hide");
+        sEl.textContent="تم التسجيل ✓ احفظه أو أعد التسجيل";
+      };
+
+      mr.start();
+      sec=0;tEl.textContent="00:00";
+      sEl.innerHTML='<span class="rd"></span> جارٍ التسجيل...';
+      bStart.classList.add("hide");bStop.classList.remove("hide");prev.classList.add("hide");
+      tm=setInterval(function(){sec++;tEl.textContent=ft(sec);if(sec>=600)bStop.click();},1000);
+    }).catch(function(err){
+      console.warn(err);
+      errEl.textContent=micErrorText(err);
+      fbBox.classList.remove("hide");
+      sEl.textContent="جاهز للتسجيل";
+    });
+  });
+
+  bStop.addEventListener("click",function(){
+    lastDur=sec;
+    if(mr&&mr.state!=="inactive"){try{mr.stop();}catch(e){}}
+    rsT();
+    bStop.classList.add("hide");
+    bStart.classList.remove("hide");
+  });
+
+  bRedo.addEventListener("click",function(){
+    clearPrev();
+    rsT();
+  });
+
+  // 💾 الحفظ مع تحويل تلقائي إلى WAV
+  bSave.addEventListener("click",function(){
+    if(!bl){to("⚠️ لا يوجد تسجيل");return;}
+    var day=+(typeof dayFn==="function"?dayFn():dayFn);
+    cnt++;
+    var dur=lastDur||sec;
+    to("⏳ جارٍ تحويل التسجيل إلى WAV...");
+    convertToWav(bl,22050).then(function(wav){
+      saveRec(day,wav,dur,"التسجيل "+cnt).then(function(){
+        to("💾 تم الحفظ بصيغة WAV");
+        clearPrev();
+        rDayRecs();rAllRecs();rProf();
+      }).catch(function(){to("⚠️ تعذر الحفظ");});
+    }).catch(function(){
+      // إذا فشل التحويل، احفظ الأصلي
+      saveRec(day,bl,dur,"التسجيل "+cnt).then(function(){
+        to("💾 تم الحفظ");
+        clearPrev();
+        rDayRecs();rAllRecs();rProf();
+      }).catch(function(){to("⚠️ تعذر الحفظ");});
+    });
+  });
+
+  fileEl.addEventListener("change",function(e){
+    var f=e.target.files&&e.target.files[0];
+    if(!f)return;
+    var day=+(typeof dayFn==="function"?dayFn():dayFn);
+    var tmp=document.createElement("audio");
+    var u=URL.createObjectURL(f);
+    var doneSave=function(dur){
+      saveRec(day,f,dur,"ملف مرفوع").then(function(){
+        to("💾 تم حفظ الملف الصوتي");
+        rDayRecs();rAllRecs();rProf();
+      }).catch(function(){to("⚠️ تعذر الحفظ");});
+      URL.revokeObjectURL(u);
+      e.target.value="";
+    };
+    tmp.preload="metadata";
+    tmp.onloadedmetadata=function(){doneSave(isFinite(tmp.duration)?Math.round(tmp.duration):0);};
+    tmp.onerror=function(){doneSave(0);};
+    tmp.src=u;
+  });
+}
+
+function rDayRecs(){
+  var l=document.getElementById("drl");if(!l)return;
+  getRecs(curDay).then(function(r){
+    if(!r.length){l.innerHTML='<p class="mu sm">لا توجد تسجيلات لهذا اليوم بعد.</p>';return;}
+    l.innerHTML=r.map(function(x,i){
+      return '<div class="ri"><div class="rih"><span class="rn">🎙️ '+(x.label||("التسجيل "+(i+1)))+'</span><span class="rdt">'+ft(x.duration||0)+' • '+fd(x.date)+'</span></div><audio controls src="'+URL.createObjectURL(x.blob)+'"></audio><button class="btn bd bsm" style="margin-top:10px" onclick="rmRec('+x.id+')">🗑️ حذف</button></div>';
+    }).join("");
+  });
+}
+function rmRec(id){delRec(id).then(function(){to("🗑️ تم الحذف");rDayRecs();rAllRecs();rProf();});}
+
+function initRec(){
+  var s=document.getElementById("rds");if(!s)return;
+  if(!s.options.length){
+    s.innerHTML=COURSE.map(function(d){return '<option value="'+d.day+'">اليوم '+d.day+' - '+d.title+'</option>';}).join("");
+    s.value=state.lastDay||1;
+    s.addEventListener("change",function(){buildRec(document.getElementById("rh"),function(){return +s.value;});rAllRecs();});
+    buildRec(document.getElementById("rh"),function(){return +s.value;});
+  }
+  rAllRecs();
+}
+function rAllRecs(){
+  var l=document.getElementById("rl"),a=document.getElementById("arl");
+  if(!l||!a)return;
+  var s=document.getElementById("rds"),day=s?+s.value:1;
+  getRecs(day).then(function(r){
+    l.innerHTML=r.length?r.map(function(x,i){
+      return '<div class="ri"><div class="rih"><span class="rn">🎙️ '+(x.label||("التسجيل "+(i+1)))+'</span><span class="rdt">'+ft(x.duration||0)+' • '+fd(x.date)+'</span></div><audio controls src="'+URL.createObjectURL(x.blob)+'"></audio><button class="btn bd bsm" style="margin-top:10px" onclick="rmRec('+x.id+')">🗑️ حذف</button></div>';
+    }).join(""):'<p class="mu sm">لا توجد تسجيلات لهذا اليوم بعد.</p>';
+  });
+  getAllRecs().then(function(ev){
+    if(!ev.length){a.innerHTML='<p class="mu sm">لم تسجل أي شيء بعد.</p>';return;}
+    var g={};ev.forEach(function(x){(g[x.day]=g[x.day]||[]).push(x);});
+    a.innerHTML=Object.keys(g).sort(function(x,y){return x-y;}).map(function(dn){
+      var it=g[dn],d=dd(dn);
+      return '<div style="margin-bottom:14px"><div class="sm" style="font-weight:800;margin-bottom:8px">📅 اليوم '+dn+' - '+(d?d.title:"")+' ('+it.length+')</div>'+
+        it.map(function(x,i){
+          return '<div class="ri"><div class="rih"><span class="rn">🎙️ '+(x.label||("التسجيل "+(i+1)))+'</span><span class="rdt">'+ft(x.duration||0)+'</span></div><audio controls src="'+URL.createObjectURL(x.blob)+'"></audio><button class="btn bd bsm" style="margin-top:10px" onclick="rmRec('+x.id+')">🗑️ حذف</button></div>';
+        }).join("")+'</div>';
+    }).join("");
+  });
+}
+
+function rProg(){
+  var b=document.getElementById("pb");
+  if(b){
+    b.innerHTML=COURSE.map(function(d){
+      var p=dp(d.day);
+      var lock=!isUnlocked(d.day)?'🔒 ':'';
+      return '<div style="margin-bottom:14px"><div class="ph"><span>'+lock+'اليوم '+d.day+' - '+d.title+'</span><b>'+p+'%</b></div><div class="bar"><span style="width:'+p+'%"></span></div></div>';
+    }).join("");
+  }
+  var s=document.getElementById("cd");
+  if(s&&!s.options.length){s.innerHTML=COURSE.map(function(d){return '<option value="'+d.day+'">اليوم '+d.day+' - '+d.title+'</option>';}).join("");}
+  rcmp();
+  var rl=document.getElementById("rtl");
+  if(rl){
+    rl.innerHTML=COURSE.map(function(d){
+      var r=state.ratings[d.day];
+      return '<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--ln)"><span class="sm">اليوم '+d.day+'</span><div class="rr" style="margin:0">'+
+        Array.from({length:10},function(_,i){var v=i+1;return '<button class="rbt '+(r===v?'on':'')+'" style="width:28px;height:28px;font-size:11px" onclick="setRp('+d.day+','+v+')">'+v+'</button>';}).join("")+
+        '</div></div>';
+    }).join("");
+  }
+  var p=op(),pm=document.getElementById("pm");
+  if(pm)pm.textContent=done()?"🎉 أكملت كل الأيام!":"استمع إلى صوتك في اليوم الأول، ثم قارنه بصوتك اليوم. (نسبة إنجازك الحالية: "+p+"%)";
+}
+function setRp(day,v){if(state.ratings[day]===v)delete state.ratings[day];else state.ratings[day]=v;saveS();rProg();}
+function rcmp(){
+  var s=document.getElementById("cd"),h=document.getElementById("cl2");
+  if(!s||!h)return;
+  var day=+s.value||1;
+  getRecs(day).then(function(r){
+    if(!r.length){h.innerHTML='<p class="mu sm">لا توجد تسجيلات لهذا اليوم.</p>';return;}
+    h.innerHTML='<p class="sm mu" style="margin-bottom:10px">عدد التسجيلات: '+r.length+'</p>'+
+      r.map(function(x,i){
+        return '<div class="ri"><div class="rih"><span class="rn">🎙️ '+(x.label||("التسجيل "+(i+1)))+'</span><span class="rdt">'+ft(x.duration||0)+' • '+fd(x.date)+'</span></div><audio controls src="'+URL.createObjectURL(x.blob)+'"></audio></div>';
+      }).join("");
+  });
+}
+
+function rProf(){
+  document.getElementById("pn").textContent=state.userName||"مستخدم دوبلاج";
+  document.getElementById("pd").textContent=cdc()+"/10";
+  document.getElementById("pp").textContent=op()+"%";
+  document.getElementById("pc").textContent=cday();
+  document.getElementById("ps").textContent=fd(state.startDate);
+  document.getElementById("pt").textContent=ctc()+" / "+ttc();
+  document.getElementById("pst").textContent=done()?"🎉 مكتمل":"قيد التقدم";
+  getAllRecs().then(function(a){document.getElementById("pr").textContent=a.length;});
+  var hint=document.getElementById("certHint");
+  if(hint) hint.textContent=done()?"🎉 شهادتك جاهزة! اضغط للعرض.":("أكمل "+(10-cdc())+" أيام لفتح شهادتك.");
+  renderAvatar();
+  renderRank();
+}
+function rst(){
+  if(!confirm("⚠️ هل أنت متأكد؟ سيتم حذف كل تقدمك وتسجيلاتك نهائيًا."))return;
+  if(!confirm("تأكيد أخير: لا يمكن التراجع."))return;
+  localStorage.removeItem(CONFIG.storageKey);
+  state=JSON.parse(JSON.stringify(DEF));
+  saveS();
+  if(db){try{db.transaction("recordings","readwrite").objectStore("recordings").clear();}catch(e){}}
+  to("🔄 تم إعادة الكورس");
+  setTimeout(function(){location.reload();},900);
+}
+
+function rFinish(){
+  getAllRecs().then(function(a){var el=document.getElementById("fr");if(el)el.textContent="🎙️ "+a.length;});
+  renderRank();
+}
+
+function genCertNo(){
+  if(state.certNo) return state.certNo;
+  var n=Math.floor(Math.random()*9000)+1000;
+  var no="DBP-2026-"+String(n).padStart(4,"0");
+  state.certNo=no;
+  saveS();
+  return no;
+}
+function openCert(){
+  if(!done()){
+    var rem=10-cdc();
+    to("🔒 الشهادة تُفتح بعد إكمال كل الأيام ("+rem+" أيام متبقية)");
+    return;
+  }
+  sv("cert");
+}
+function rCert(){
+  var name=state.userName||"اسم المتدرب";
+  document.getElementById("certName").textContent="【 "+name+" 】";
+  document.getElementById("certDate").textContent=fdShort(Date.now());
+  document.getElementById("certNo").textContent="【 "+genCertNo()+" 】";
+  var tk=document.getElementById("certTikTok");
+  if(tk) tk.textContent=CONFIG.tiktokUsername;
+  var tkl=document.getElementById("certTikTokLink");
+  if(tkl){tkl.href=TIKTOK_LINK;tkl.textContent=CONFIG.tiktokUsername;}
+  var rank=computeRank();
+  var rankEl=document.getElementById("certRank");
+  var rankDescEl=document.getElementById("certRankDesc");
+  if(rankEl){
+    rankEl.innerHTML=rank.icon+" "+rank.title;
+    rankEl.style.color=rank.color;
+    rankEl.style.textShadow="0 0 25px "+rank.color+"aa";
+  }
+  if(rankDescEl) rankDescEl.textContent=rank.desc;
+  applyLinks();
+}
+function saveCertImage(){
+  if(typeof html2canvas==="undefined"){
+    to("⏳ جارٍ تحميل أداة الحفظ...");
+    setTimeout(saveCertImage,1500);
+    return;
+  }
+  var certBox=document.getElementById("certBox");
+  if(!certBox){to("⚠️ الشهادة غير موجودة");return;}
+  to("⏳ جارٍ تحضير الصورة...");
+  html2canvas(certBox,{
+    backgroundColor:"#1f1410",
+    scale:2.5,
+    useCORS:true,
+    logging:false
+  }).then(function(canvas){
+    canvas.toBlob(function(blob){
+      var url=URL.createObjectURL(blob);
+      var a=document.createElement("a");
+      var safeName=(state.userName||"User").replace(/[^\w\u0600-\u06FF]+/g,"-");
+      a.href=url;
+      a.download="DUBAJ-PRO-Certificate-"+safeName+".png";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function(){URL.revokeObjectURL(url);},4000);
+      to("✅ تم حفظ الشهادة كصورة في جهازك");
+    },"image/png");
+  }).catch(function(err){
+    console.error(err);
+    to("⚠️ تعذر حفظ الصورة — جرّب على متصفح آخر");
+  });
+}
+function shareCert(){
+  var name=state.userName||"متدرب";
+  var no=state.certNo||genCertNo();
+  var rank=computeRank();
+  var text="🎓 شهادة إتمام من DUBAJ PRO\n\n"+
+    "المتدرب: "+name+"\n"+
+    "البرنامج: PRO DUBBING - برنامج احتراف الدبلجة\n"+
+    "المدة: 10 أيام\n"+
+    "رقم الشهادة: "+no+"\n"+
+    "المستوى: "+rank.icon+" "+rank.title+"\n\n"+
+    "🏆 DUBBING TRAINEE — مكتمل 10/10\n\n"+
+    "🎙️ DUBAJ PRO\nLearn • Practice • Perform\n"+
+    "توقيع: دبلجة الأنمي\nTikTok: "+CONFIG.tiktokUsername;
+  if(navigator.share){
+    navigator.share({title:"شهادتي من DUBAJ PRO",text:text}).catch(function(){});
+  }else{
+    if(navigator.clipboard){
+      navigator.clipboard.writeText(text).then(function(){to("📋 تم نسخ الشهادة");}).catch(function(){to("⚠️ تعذر النسخ");});
+    }
+  }
+}
+
+function applyLinks(){
+  document.querySelectorAll(".an").forEach(function(e){e.textContent=CONFIG.appName;});
+  var h=document.getElementById("hn");if(h)h.textContent=CONFIG.appName;
+  var w=document.getElementById("wn");if(w)w.textContent=CONFIG.appName;
+  var f=document.getElementById("fo");if(f)f.textContent=CONFIG.ownerName;
+  ["wt","ht","ft","pt2","dtt"].forEach(function(id){
+    var e=document.getElementById(id);
+    if(e){e.href=TIKTOK_LINK;e.textContent="🎵 "+CONFIG.tiktokUsername;}
+  });
+  document.title=CONFIG.appName+" - كورس احتراف الدبلجة";
+  var wl=document.getElementById("wl"),hl=document.getElementById("hl");
+  if(CONFIG.logoUrl){
+    var is="width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block";
+    if(wl)wl.innerHTML='<img src="'+CONFIG.logoUrl+'" style="'+is+'" alt="logo">';
+    if(hl)hl.innerHTML='<img src="'+CONFIG.logoUrl+'" style="'+is+'" alt="logo">';
+  }else{
+    if(wl)wl.textContent=CONFIG.appEmoji;
+    if(hl)hl.textContent=CONFIG.appEmoji;
+  }
+}
+
+function startCourse(){
+  try{
+    var inp=document.getElementById("inp");
+    var name=(inp&&inp.value)?inp.value.trim():"";
+    if(!name || name.length < 2){
+      inp.classList.add("err");
+      inp.placeholder="⚠️ اكتب اسمك من فضلك";
+      setTimeout(function(){inp.classList.remove("err");},600);
+      to("⚠️ اكتب اسمك أولًا");
+      return;
+    }
+    state.userName=name;
+    state.welcomed=true;
+    if(!state.startDate)state.startDate=Date.now();
+    if(!state.certNo) state.certNo="DBP-2026-"+String(Math.floor(Math.random()*9000)+1000).padStart(4,"0");
+    saveS();
+    document.getElementById("welc").classList.add("hide");
+    document.getElementById("ma").classList.remove("hide");
+    try{rHome();rCourse();}catch(e){}
+    sv("home");
+    startCountdowns();
+    to("🚀 رحلتك بدأت! بالتوفيق");
+  }catch(e){
+    console.error(e);
+    document.getElementById("welc").classList.add("hide");
+    document.getElementById("ma").classList.remove("hide");
+  }
+}
+
+function init(){
+  loadS();
+  applyLinks();
+  openDB().catch(function(){});
+  renderAvatar();
+  if(state.welcomed && state.userName){
+    document.getElementById("welc").classList.add("hide");
+    document.getElementById("ma").classList.remove("hide");
+    try{rHome();rCourse();}catch(e){}
+    sv("home");
+    startCountdowns();
+  }else{
+    document.getElementById("welc").classList.remove("hide");
+    document.getElementById("ma").classList.add("hide");
+    if(state.userName){
+      var inp=document.getElementById("inp");
+      if(inp) inp.value=state.userName;
+    }
+  }
+}
+
+window.addEventListener("load",function(){
+  init();
+  var sb=document.getElementById("sb");
+  if(sb) sb.addEventListener("click",startCourse);
+  var inp=document.getElementById("inp");
+  if(inp) inp.addEventListener("keydown",function(e){if(e.key==="Enter")startCourse();});
+  console.log("✅ DUBAJ PRO جاهز 🔥 — التسجيلات بصيغة WAV مدعومة من واتساب");
+});
+</script>
+</body>
+</html>
